@@ -15,139 +15,50 @@
 #include <utility>
 #include <queue>
 #include <stack>
+#include <map>
+#include <set>
 
 using namespace std;
 
-template<class C>
-void printout(C& c)
-{
-  for (auto &t : c)
-  {
-    cout << t << " , ";
-  }
-  cout << endl;
-}
-
-template<class T>
-ostream& print(const T & start, const T & end)
-{
-  T t = start;
-  for (; t != end; ++t)
-  {
-    cout << *t << " ";
-  }
-  return cout;
-}
-
-class A
+class t11
 {
 public:
-  int a;
-public:
-  A(int a) :
-      a(a)
+  t11()
   {
-  }
-  A(const A & a)
-  {
+    std::vector<int> v1;                // LINE I
+    v1.push_back(10);                        // LINE II
+    std::cout << v1.front() << ":" << v1.back() << std::endl;                // LINE III
   }
 };
 
-void del(A * p)
+class t12
 {
-  delete p;
-}
-
-ostream & operator<<(ostream & c, const A & o)
-{
-  c << o.a;
-  return c;
-}
-
-void fill(const int table[], unsigned size, vector<A*> & v)
-{
-  for (unsigned i = 0; i < size; ++i)
+public:
+  t12()
   {
-    v.push_back(new A(table[i]));                        //LINE I
+    main();
   }
-}
-
-// Try uninitialize iterator
-void unitialize_it()
-{
-  std::vector<int> v;
-  std::vector<int> a { 1, 2, 3, 4 };
-  std::vector<int> b(10);
-  std::vector<int> c { 10 };
-  std::vector<int> d { 10, 2 };
-  std::vector<int> e(10, 2);
-  std::vector<int>::iterator it;
-  it = a.begin();
-  cout << *it << endl;
-  printout(a);
-  printout(b);
-  printout(c);
-  printout(d);
-  printout(e);
-  int aa[] = { 2, 3, 4, 5, 6 };
-  std::vector<int> f(aa, aa + 5);
-  std::vector<int> g { aa, aa + 4 };
-  printout(f);
-  printout(g);
-
-  std::vector<int> h { g };
-  std::vector<int> i { std::move(g) };
-  printout(h);
-  printout(g);
-  printout(i);
-
-  //
-  deque<int> di { aa, aa + 4 };
-  printout(di);
-  //  deque<int>::const_iterator it1;
-//  it1 = di.begin();
-//  di.erase(it1);
-  queue<int> qe { di };
-  cout << qe.size() << endl;
-
-  list<int> la { aa, aa + 4 };
-  auto it_la = la.begin();
-  //it_la = it_la + 2;
-  ++it_la;
-  printout(la);
-  la.resize(10);
-  printout(la);
-
-  list<int> la1 { 1, 2, 3, 4 };
-  printout(la1);
-
-  priority_queue<int> pq { aa, aa + 4 };
-  priority_queue<int> pq2 { std::less<int>(), f };
-
-  cout << "pq2   ";
-  while (pq2.size())
-  {
-    cout << pq2.top() << " ; ";
-    pq2.pop();
-  }
-  cout << endl;
-
-  while (pq.size())
-  {
-    cout << pq.top() << " ; ";
-    pq.pop();
-  }
-  cout << endl;
-
+  int main()
   {
     vector<int> v1(4, 3);
     v1.push_back(4);
-//    for (vector<int>::iterator i = v1.rbegin(); i != v1.rend(); ++i)    ///***** reverse iterator type missing
-    {
+//    for (vector<int>::iterator i = v1.rbegin(); i != v1.rend(); ++i)
+//    {
 //      cout << *i << " ";
-    }
+//    }
     cout << endl;
+    return 0;
   }
+};
+
+class t13
+{
+public:
+  t13()
+  {
+    main();
+  }
+  int main()
   {
     vector<int> v1(10, -1);
     vector<int> v2;
@@ -156,7 +67,18 @@ void unitialize_it()
     {
       v2.push_back(i);
     }
+    return 0;
   }
+};
+
+class t14
+{
+public:
+  t14()
+  {
+    main();
+  }
+  int main()
   {
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     vector<int> v1(tab, tab + 10);
@@ -175,7 +97,28 @@ void unitialize_it()
       cout << "Exception!" << endl;
     }
 
+    return 0;
   }
+
+};
+
+class t15
+{
+public:
+  t15()
+  {
+    main();
+  }
+  template<typename T> ostream & print(T & start, T & end)
+  {
+    for (; start != end; ++start)
+    {
+      cout << *start << " ";
+    }
+    return cout;
+  }
+
+  int main()
   {
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     deque<int> d1(tab, tab + 10);
@@ -185,19 +128,59 @@ void unitialize_it()
     {
       d2.push_back(d1[d1.end() - it - 1]);        //LINE I
     }
-    print(d2.rbegin(), d2.rend()) << endl;        //LINE II
-
+   // print(d2.rbegin(), d2.rend()) << endl;        //LINE II
+    return 0;
   }
+};
+
+class t16
+{
+public:
+  t16()
+  {
+    main();
+  }
+  template<typename T> ostream & print(T & start, T & end)
+  {
+    for (; start != end; ++start)
+    {
+      cout << *start << " ";
+    }
+    return cout;
+  }
+
+  int main()
   {
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     deque<int> d1(tab, tab + 10);
 
     deque<int>::const_iterator it = d1.begin() + 3;
-   // d1.erase(it, it + 1); // **** const
-    print(d1.begin(), d1.end());
+//    d1.erase(it, it + 1);
+//    print(d1.begin(), d1.end());
     d1.clear();
     cout << d1.size() << endl;
+    return 0;
   }
+};
+
+class t17
+{
+public:
+  t17()
+  {
+    main();
+  }
+  template<typename T> ostream & print(const T & start, const T & end)
+  {
+    T tmp = start;
+    for (; tmp != end; ++tmp)
+    {
+      cout << *tmp << " ";
+    }
+    return cout;
+  }
+
+  int main()
   {
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     deque<int> d1(tab, tab + 10);
@@ -209,8 +192,98 @@ void unitialize_it()
       d1.pop_front();                                        //        LINE II
     }
     print(d2.begin(), d2.end()) << ": " << d2.size() << endl;
-
+    return 0;
   }
+};
+
+class t18
+{
+public:
+  t18()
+  {
+    main();
+  }
+  template<typename T> ostream & print(const T & start, const T & end)
+  {
+    T tmp = start;
+    for (; tmp != end; ++tmp)
+    {
+      cout << *tmp << " ";
+    }
+    return cout;
+  }
+  class A
+  {
+  public:
+    int a;
+  public:
+    A(int a) :
+        a(a)
+    {
+    }
+    A(const A & a)
+    {
+    }
+  };
+
+  friend ostream & operator<<(ostream & c, const A & o)
+  {
+    c << o.a;
+    return c;
+  }
+
+  int main()
+  {
+    int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    list<A> l1(tab, tab + 10);
+    deque<A> d1;
+    list<A>::iterator it;
+    for (it = l1.begin(); it != l1.end(); ++it)
+    {
+      //d1.insert(d1.begin(), it[0]);
+    }
+    print(d1.begin(), d1.end()) << endl;
+    return 0;
+  }
+};
+
+class t19
+{
+public:
+  t19()
+  {
+    main();
+  }
+  template<typename T> ostream & print(const T & start, const T & end)
+  {
+    T tmp = start;
+    for (; tmp != end; ++tmp)
+    {
+      cout << *tmp << " ";
+    }
+    return cout;
+  }
+  class A
+  {
+  public:
+    int a;
+  public:
+    A(int a) :
+        a(a)
+    {
+    }
+    A(const A & a)
+    {
+    }
+  };
+
+ friend ostream & operator<<(ostream & c, const A & o)
+  {
+    c << o.a;
+    return c;
+  }
+
+  int main()
   {
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     list<A> l1(tab, tab + 10);
@@ -219,11 +292,31 @@ void unitialize_it()
 
     for (it = l1.begin(); it != l1.end(); ++it)
     {
-      // d1.insert(d1.begin(), it[0]); //*** not random
+      //d1.insert(d1.begin(), it[0]);
     }
     print(d1.begin(), d1.end()) << endl;
-
+    return 0;
   }
+
+};
+
+class t110
+{
+public:
+  t110()
+  {
+    main();
+  }
+  template<typename T> ostream & print(T & start, T & end)
+  {
+    for (; start != end; ++start)
+    {
+      cout << *start << " ";
+    }
+    return cout;
+  }
+
+  int main()
   {
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     list<int> l1(tab, tab + 10);
@@ -231,23 +324,59 @@ void unitialize_it()
     list<int>::iterator it;
     for (it = l1.begin(); it != l1.end(); ++it)
     {
-      // l2.push_back(l1[l1.end() - it - 1]);   // not random     //LINE I
+      //l2.push_back(l1[l1.end() - it - 1]);        //LINE I
     }
-    print(l2.begin(), l2.end()) << endl;        //LINE II
-
+    //print(l2.begin(), l2.end()) << endl;        //LINE II
+    return 0;
+  }
+};
+class t111
+{
+public:
+  t111()
+  {
+    main();
+  }
+  template<typename T> ostream & print(T & start, T & end)
+  {
+    for (; start != end; ++start)
+    {
+      cout << *start << " ";
+    }
+    return cout;
   }
 
+  int main()
   {
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     list<int> l1(tab, tab + 10);
 
-    // list<int>::const_iterator it = l1.begin() + 3;        //LINE I ****** random ***
-    //  l1.erase(it, advance(it, 1));          // const                               //LINE II
-    print(l1.begin(), l1.end());
+   // list<int>::const_iterator it = l1.begin() + 3;        //LINE I
+    //l1.erase(it, advance(it, 1));                                        //LINE II
+    //print(l1.begin(), l1.end());
     l1.clear();                                                                                //LINE III
     cout << l1.size() << endl;
-
+    return 0;
   }
+};
+class t112
+{
+public:
+  t112()
+  {
+    main();
+  }
+  template<typename T> ostream & print(const T & start, const T & end)
+  {
+    T tmp = start;
+    for (; tmp != end; ++tmp)
+    {
+      cout << *tmp << " ";
+    }
+    return cout;
+  }
+
+  int main()
   {
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     list<int> l1(tab, tab + 10);
@@ -261,7 +390,43 @@ void unitialize_it()
       l1.pop_front();
     }
     print(l2.begin(), l2.end()) << ": " << l2.size() << endl;
+    return 0;
   }
+};
+class t113
+{
+public:
+  t113()
+  {
+    main();
+  }
+  template<typename T> ostream & print(const T & start, const T & end)
+  {
+    T tmp = start;
+    for (; tmp != end; ++tmp)
+    {
+      cout << *tmp << " ";
+    }
+    return cout;
+  }
+  class A
+  {
+  public:
+    int a;
+  public:
+    A(int a) :
+        a(a)
+    {
+    }
+  };
+
+  friend ostream & operator<<(ostream & c, const A & o)
+  {
+    c << o.a;
+    return c;
+  }
+
+  int main()
   {
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     list<A> l1(tab, tab + 10);
@@ -269,11 +434,54 @@ void unitialize_it()
     list<A>::iterator it;
     for (it = l1.begin(); it != l1.end(); ++it)
     {
-      // l2.push_front(it);  // **** value
+      //l2.push_front(it);
     }
     print(l2.begin(), l2.end()) << endl;
-
+    return 0;
   }
+};
+class t114
+{
+public:
+  t114()
+  {
+    main();
+  }
+  template<typename T> ostream & print(const T & start, const T & end)
+  {
+    T tmp = start;
+    for (; tmp != end; ++tmp)
+    {
+      cout << *tmp << " ";
+    }
+    return cout;
+  }
+  class A
+  {
+  public:
+    int a;
+  public:
+    A(int a) :
+        a(a)
+    {
+    }
+  };
+
+  void fill(const int table[], unsigned size, vector<A*> & v)
+  {
+    for (unsigned i = 0; i < size; ++i)
+    {
+      v.push_back(new A(table[i]));                        //LINE I
+    }
+  }
+
+  friend ostream & operator<<(ostream & c, const A & o)
+  {
+    c << o.a;
+    return c;
+  }
+
+  int main()
   {
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     vector<A*> v1;
@@ -286,17 +494,18 @@ void unitialize_it()
       l1.push_front(**it);
     }
     print(l1.begin(), l1.end()) << endl;
+    return 0;                //LINE I
   }
+
+};
+class t115
+{
+public:
+  t115()
   {
-    vector<int> v;
-    // priority_queue<int> q(v); // ****************
-    list<int> l;
-    // priority_queue<int> q1(l); // ******************
-    queue<int> q2;
-    deque<int> d;
-    priority_queue<int> q3(d.begin(), d.end());
-     // priority_queue<int> q4(d); // vector **************
+    main();
   }
+  int main()
   {
     int t[] = { 3, 5, 1, 4, 2 };
     vector<int> v(t, t + 5);
@@ -304,17 +513,18 @@ void unitialize_it()
     cout << q.top() << " ";
     q.push(0);
     cout << q.top() << endl;
+    return 0;
   }
+
+};
+class t116
+{
+public:
+  t116()
   {
-    list<int> l;
-    //queue<int> q1(l);   // **********
-    vector<int> v;
-    //queue<int> q2(v); // NOT BUILD
-    queue<int> q3;
-    deque<int> d;
-    queue<int> q4(d);
-    // queue<int> q5(d.begin(), d.end()); // NOT BUILD
+    main();
   }
+  int main()
   {
     int t[] = { 1, 5, 3, 4, 2 };
     deque<int> d(t, t + 5);
@@ -322,17 +532,17 @@ void unitialize_it()
     cout << q.front() << " " << q.back() << " ";
     q.pop();
     cout << q.front() << " " << q.back() << endl;
+    return 0;
   }
+};
+class t117
+{
+public:
+  t117()
   {
-    deque<int> d;
-    stack<int> s1(d);
-    // stack<int> s2(d.begin(), d.end());  NOT BUILD
-    list<int> l;
-    // stack<int> s3(l);  NOT BUILD
-    stack<int> s4;
-    vector<int> v;
-    //stack<int> s5(v); //not build
+    main();
   }
+  int main()
   {
     int t[] = { 1, 5, 3, 4, 2 };
     deque<int> d(t, t + 5);
@@ -340,7 +550,27 @@ void unitialize_it()
     cout << s.top() << " ";
     d.push_front(6);
     cout << s.top() << endl;
+    return 0;
   }
+
+};
+class t118
+{
+public:
+  t118()
+  {
+    main();
+  }
+  template<typename T> ostream & print(T & start, T & end)
+  {
+    for (; start != end; ++start)
+    {
+      cout << *start << " ";
+    }
+    return cout;
+  }
+
+  int main()
   {
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     vector<int> v1(tab, tab + 10);
@@ -350,37 +580,162 @@ void unitialize_it()
     {
       v2.push_back(v1[v1.end() - it - 1]);        //LINE I
     }
-    print(v2.rbegin(), v2.rend()) << endl;        //LINE II
-
+   // print(v2.rbegin(), v2.rend()) << endl;        //LINE II
+    return 0;
   }
+
+};
+class t119
+{
+public:
+  t119()
+  {
+    main();
+  }
+  template<typename T> ostream & print(T & start, T & end)
+  {
+    for (; start != end; ++start)
+    {
+      cout << *start << " ";
+    }
+    return cout;
+  }
+
+  int main()
   {
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     vector<int> v1(tab, tab + 10);
 
     vector<int>::const_iterator it = v1.begin() + 3;
-    // v1.erase(it, it + 1);  // ********** const it
-    print(v1.begin(), v1.end());
+   // v1.erase(it, it + 1);
+    //print(v1.begin(), v1.end());
     v1.empty();
     cout << v1.size() << endl;
+    return 0;
   }
+
+};
+class t120
+{
+public:
+  t120()
+  {
+    main();
+  }
+  template<typename T> ostream & print(const T & start, const T & end)
+  {
+    T tmp = start;
+    for (; tmp != end; ++tmp)
+    {
+      cout << *tmp << " ";
+    }
+    return cout;
+  }
+
+  int main()
   {
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     vector<int> v1(tab, tab + 10);
     vector<int> v2;
     v2.reserve(10);
 
-    while (!v1.empty())
+    //while (!v1.empty())
     {
-      // v2.insert(v2.begin(), v1.pop_back()); // ********** push_back return void
+      //v2.insert(v2.begin(), v1.pop_back());
     }
     print(v2.rbegin(), v2.rend()) << ": " << v2.size() << endl;
+    return 0;
   }
+};
+class t121
+{
+public:
+  t121()
+  {
+    main();
+  }
+  template<typename T> ostream & print(const T & start, const T & end)
+  {
+    T tmp = start;
+    for (; tmp != end; ++tmp)
+    {
+      //cout << *tmp << " ";                        //LINE II
+    }
+    return cout;
+  }
+  class A
+  {
+  public:
+    int a;
+  public:
+    A(int a) :
+        a(a)
+    {
+    }
+  };
+
+  friend ostream & operator<<(const A & o, ostream & c)
+  {
+    c << o.a;
+    return c;
+  }
+
+  int main()
   {
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     vector<A> v1(tab, tab + 10);                //LINE I
     v1.insert(v1.end(), A(0));
     print(v1.begin(), v1.end()) << endl;
+    return 0;
   }
+
+};
+class t122
+{
+public:
+  t122()
+  {
+    main();
+  }
+  template<typename T> ostream & print(const T & start, const T & end)
+  {
+    T tmp = start;
+    for (; tmp != end; ++tmp)
+    {
+      cout << *tmp << " ";
+    }
+    return cout;
+  }
+  class A
+  {
+  public:
+    int a;
+  public:
+    A(int a) :
+        a(a)
+    {
+    }
+  };
+
+  friend ostream & operator<<(ostream & c, const A & o)
+  {
+    c << o.a;
+    return c;
+  }
+
+  void fill(const int table[], unsigned size, vector<A*> & v)
+  {
+    for (unsigned i = 0; i < size; ++i)
+    {
+      v.push_back(new A(table[i]));                        //LINE I
+    }
+  }
+
+  static void del(A * p)
+  {
+    delete p;
+  }
+  int main()
   {
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     vector<A*> v1;
@@ -388,13 +743,193 @@ void unitialize_it()
 
     print(v1.rbegin(), v1.rend()) << endl;                //LINE II
     for_each(v1.begin(), v1.end(), del);
+    return 0;
   }
 
-}
+};
+class t123
+{
+public:
+  t123()
+  {
+    main();
+  }
+  void main()
+  {
+    deque<int> d;
+    d.size();
+    d.empty();
+
+  }
+};
+class t124
+{
+public:
+  t124()
+  {
+    main();
+  }
+  void main()
+  {
+    std::list<int> l;
+    l.clear();
+    l.erase(l.begin(), l.end());
+  }
+};
+class t125
+{
+public:
+  t125()
+  {
+    main();
+  }
+  void main()
+  {
+    //priority_queue<int, std::map<int> > q1;
+    priority_queue<int, std::vector<int> > q2;
+    //priority_queue<int, std::list<int> > q3;
+    priority_queue<int, std::deque<int> > q4;
+    //priority_queue<int, std::set<int> > q5;
+
+  }
+};
+class t126
+{
+public:
+  t126()
+  {
+    main();
+  }
+  void main()
+  {
+    vector<int> v;
+    //priority_queue<int> q1(v);
+    list<int> l;
+    //priority_queue<int> q2(l);
+    queue<int> q3;
+    deque<int> d;
+    priority_queue<int> q4(d.begin(), d.end());
+    //priority_queue<int> q5(d);
+  }
+};
+class t127
+{
+public:
+  t127()
+  {
+    main();
+  }
+  void main()
+  {
+    std::list<int> l;
+    std::deque<int> d;
+//    queue<int, std::map<int> > q1;
+    //queue<int, std::vector<int> > q2;
+    queue<int, std::list<int> > q3(l);
+    queue<int, std::deque<int> > q4(d);
+//    queue<int, std::set<int> > q5;
+//    q2.push(2);
+//    q2.pop();
+//    q5.push(2);
+//    q5.pop();
+  }
+};
+class t128
+{
+public:
+  t128()
+  {
+    main();
+  }
+  void main()
+  {
+//    list<int> l; queue<int> q1(l);
+    vector<int> v;
+//    queue<int> q2(v);
+    queue<int> q3;
+    deque<int> d;
+    queue<int> q4(d);
+    queue<int, std::vector<int> > q6(v);
+//     queue<int> q5(d.begin(), d.end());
+  }
+};
+
+class t129
+{
+public:
+  t129()
+  {
+    main();
+  }
+  void main()
+  {
+    //stack<int, std::map<int> > q1;
+    stack<int, std::vector<int> > q2;
+    stack<int, std::list<int> > q3;
+    stack<int, std::deque<int> > q4;
+//    stack<int, std::set<int> > q5;
+    q2.push(3);
+    q3.push(3);
+    q4.push(3);
+//    q5.push(3);
+    q2.pop();
+    q3.pop();
+    q4.pop();
+//    q5.pop();
+  }
+};
+class t130
+{
+public:
+  t130()
+  {
+    main();
+  }
+  void main()
+  {
+    deque<int> d; stack<int> s1(d);
+//    stack<int> s2(d.begin(), d.end());
+    list<int> l;
+//    stack<int> s3(l);
+    stack<int> s4;
+    vector<int> v;
+//    stack<int> s5(v);
+  }
+};
 
 int main()
 {
-  unitialize_it();
+  t11 e11;
+  t12 e12;
+  t13 e13;
+  t14 e14;
+  t15 e15;
+  t16 e16;
+  t17 e17;
+  t18 e18;
+  t19 e19;
+  t110 e110;
+  t111 e111;
+  t112 e112;
+  t113 e113;
+  t114 e114;
+  t115 e115;
+  t116 e116;
+  t117 e117;
+  t118 e118;
+  t119 e119;
+  t120 e120;
+  t121 e121;
+  t122 e122;
+  t123 e123;
+  t124 e124;
+  t125 e125;
+  t126 e126;
+  t127 e127;
+  t128 e128;
+  t129 e129;
+  t130 e130;
+
   return 0;
 }
 
