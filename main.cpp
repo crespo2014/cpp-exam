@@ -20,6 +20,8 @@
 
 using namespace std;
 
+#include "test2.h"
+
 class t11
 {
 public:
@@ -109,7 +111,7 @@ public:
   {
     main();
   }
-  template<typename T> ostream & print(T & start, T & end)
+  template<typename T> ostream & print(T  start,const T & end)
   {
     for (; start != end; ++start)
     {
@@ -128,7 +130,7 @@ public:
     {
       d2.push_back(d1[d1.end() - it - 1]);        //LINE I
     }
-   // print(d2.rbegin(), d2.rend()) << endl;        //LINE II
+    print(d2.rbegin(), d2.rend()) << endl;        //LINE II
     return 0;
   }
 };
@@ -899,37 +901,38 @@ public:
 
 int main()
 {
-  t11 e11;
-  t12 e12;
-  t13 e13;
-  t14 e14;
-  t15 e15;
-  t16 e16;
-  t17 e17;
-  t18 e18;
-  t19 e19;
-  t110 e110;
-  t111 e111;
-  t112 e112;
-  t113 e113;
-  t114 e114;
-  t115 e115;
-  t116 e116;
-  t117 e117;
-  t118 e118;
-  t119 e119;
-  t120 e120;
-  t121 e121;
-  t122 e122;
-  t123 e123;
-  t124 e124;
-  t125 e125;
-  t126 e126;
-  t127 e127;
-  t128 e128;
-  t129 e129;
-  t130 e130;
+//  t11 e11;
+//  t12 e12;
+//  t13 e13;
+//  t14 e14;
+//  t15 e15;
+//  t16 e16;
+//  t17 e17;
+//  t18 e18;
+//  t19 e19;
+//  t110 e110;
+//  t111 e111;
+//  t112 e112;
+//  t113 e113;
+//  t114 e114;
+//  t115 e115;
+//  t116 e116;
+//  t117 e117;
+//  t118 e118;
+//  t119 e119;
+//  t120 e120;
+//  t121 e121;
+//  t122 e122;
+//  t123 e123;
+//  t124 e124;
+//  t125 e125;
+//  t126 e126;
+//  t127 e127;
+//  t128 e128;
+//  t129 e129;
+//  t130 e130;
 
+  s2t23::main();
   return 0;
 }
 
