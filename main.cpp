@@ -111,7 +111,7 @@ public:
   {
     main();
   }
-  template<typename T> ostream & print(T  start,const T & end)
+  template<typename T> ostream & print(T start, const T & end)
   {
     for (; start != end; ++start)
     {
@@ -279,7 +279,7 @@ public:
     }
   };
 
- friend ostream & operator<<(ostream & c, const A & o)
+  friend ostream & operator<<(ostream & c, const A & o)
   {
     c << o.a;
     return c;
@@ -353,7 +353,7 @@ public:
     int tab[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     list<int> l1(tab, tab + 10);
 
-   // list<int>::const_iterator it = l1.begin() + 3;        //LINE I
+    // list<int>::const_iterator it = l1.begin() + 3;        //LINE I
     //l1.erase(it, advance(it, 1));                                        //LINE II
     //print(l1.begin(), l1.end());
     l1.clear();                                                                                //LINE III
@@ -582,7 +582,7 @@ public:
     {
       v2.push_back(v1[v1.end() - it - 1]);        //LINE I
     }
-   // print(v2.rbegin(), v2.rend()) << endl;        //LINE II
+    // print(v2.rbegin(), v2.rend()) << endl;        //LINE II
     return 0;
   }
 
@@ -609,7 +609,7 @@ public:
     vector<int> v1(tab, tab + 10);
 
     vector<int>::const_iterator it = v1.begin() + 3;
-   // v1.erase(it, it + 1);
+    // v1.erase(it, it + 1);
     //print(v1.begin(), v1.end());
     v1.empty();
     cout << v1.size() << endl;
@@ -889,7 +889,8 @@ public:
   }
   void main()
   {
-    deque<int> d; stack<int> s1(d);
+    deque<int> d;
+    stack<int> s1(d);
 //    stack<int> s2(d.begin(), d.end());
     list<int> l;
 //    stack<int> s3(l);
@@ -932,7 +933,34 @@ int main()
 //  t129 e129;
 //  t130 e130;
 
+  s2t01::main();
+  s2t02::main();
+  s2t03::main();
+  s2t04::main();
+  s2t05::main();
+  s2t06::main();
+  s2t07::main();
+  s2t08::main();
+  s2t09::main();
+  s2t10::main();
+  s2t11::main();
+  s2t12::main();
+  s2t13::main();
+  s2t14::main();
+  s2t15::main();
+  s2t16::main();
+  s2t17::main();
+  s2t18::main();
+  s2t19::main();
+  s2t20::main();
+  s2t21::main();
+  s2t22::main();
   s2t23::main();
+  s2t24::main();
+  s2t25::main();
+  s2t26::main();
+  s2t27::main();
+  s2t28::main();
   return 0;
 }
 

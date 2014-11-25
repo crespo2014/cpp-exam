@@ -17,6 +17,7 @@ using namespace std;
 
 class s2t01
 {
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
@@ -43,6 +44,7 @@ class s2t01
 
 class s2t02
 {
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
@@ -69,6 +71,7 @@ class s2t02
 
 class s2t03
 {
+public:
   class A
   {
     int a;
@@ -110,6 +113,7 @@ class s2t03
 
 class s2t04
 {
+public:
   s2t04()
   {
     main();
@@ -142,6 +146,7 @@ class s2t04
 
 class s2t05
 {
+public:
 
   static int main()
   {
@@ -168,6 +173,7 @@ class s2t05
 
 class s2t06
 {
+public:
   template<class T>
   static void print(T start, T end)
   {
@@ -182,12 +188,12 @@ class s2t06
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v(mynumbers, mynumbers + 7);
     set<int> s(v.begin(), v.end());
-    for (int i = 10; i > 0; i)
-    {
-//      int x = s.top();    //LINE I
-//      s.pop();                 //LINE II
-      //     v.push_back(i + x);                 //LINE III
-    }
+//    for (int i = 10; i > 0; i++)
+//    {
+////      int x = s.top();    //LINE I
+////      s.pop();                 //LINE II
+//      //     v.push_back(i + x);                 //LINE III
+//    }
     print(v.begin(), v.end());
     print(s.begin(), s.end());
     cout << endl;
@@ -208,6 +214,7 @@ class s2t06
 
 class s2t07
 {
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
@@ -233,6 +240,7 @@ class s2t07
 
 class s2t08
 {
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
@@ -258,6 +266,7 @@ class s2t08
 
 class s2t09
 {
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
@@ -283,6 +292,7 @@ class s2t09
    */};
 class s2t10
 {
+public:
   class A
   {
     int a;
@@ -311,7 +321,7 @@ class s2t10
     set<A> s(mynumbers, mynumbers + 7);                        //LINE II
     multiset<A> s1(s.begin(), s.end());        //LINE III
     s1.insert(s.begin(), s.end());
-    s1.erase(s1.lower_bound(2), s1.upper_bound(5));        //LINE IV
+   // s1.erase(s1.lower_bound(2), s1.upper_bound(5));        //LINE IV
     multiset<A>::iterator i = s1.begin();
     for (; i != s1.end(); i++)
     {
@@ -328,7 +338,7 @@ class s2t10
    the exception will be thrown at line LINE I
    the exception will be thrown at line LINE III
    0, 1, 9
-   the exception will be thrown at line LINE IV
+ *  the exception will be thrown at line LINE IV
    0, 0, 1, 1, 9, 9
    */};
 
@@ -380,6 +390,7 @@ public:
 
 class s2t13
 {
+public:
   template<class T>
   static void print(T start, T end)
   {
@@ -394,11 +405,11 @@ class s2t13
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5, 7 };
     vector<int> v(mynumbers, mynumbers + 7);
     multiset<int> s1(mynumbers, mynumbers + 7);
-    for (int i = 9; i > 0; i)
-    {
-      //double x = s1.pop();                                 //LINE I
-      //v.push_back(i + x);    //LINE II
-    }
+//    for (int i = 9; i > 0; i)
+//    {
+//      //double x = s1.pop();                                 //LINE I
+//      //v.push_back(i + x);    //LINE II
+//    }
     print(v.begin(), v.end());
     cout << endl;
     return 0;
@@ -445,6 +456,7 @@ public:
 
 class s2t15
 {
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5, 8 };
@@ -469,14 +481,14 @@ class s2t15
 
 class s2t16
 {
-
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     string words[] = { "three", "nine", "zero", "two", "one", "four", "five" };
     map<int, string> m;
-    for (int i = 0; i < 9; i++)
-      m.insert(pair<int, string>(mynumbers[i], words[i]));    //LINE I
+//    for (int i = 0; i < 9; i++)
+//      m.insert(pair<int, string>(mynumbers[i], words[i]));    //LINE I
     m[0] = "ten";                                                                                           //LINE II
     m.insert(pair<int, string>(1, "eleven"));                //LINE III
     for (map<int, string>::iterator i = m.begin(); i != m.end(); i++)
@@ -497,7 +509,7 @@ class s2t16
 
 class s2t17
 {
-
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
@@ -524,6 +536,7 @@ class s2t17
 
 class s2t18
 {
+public:
   // Which changes, introduced independently, will allow the code to compile and display "zero, one, two, five, nine, "? Choose all that apply
 
   class A
@@ -571,6 +584,7 @@ class s2t18
 
 class s2t19
 {
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5, 5 };
@@ -599,6 +613,7 @@ class s2t19
 
 class s2t20
 {
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
@@ -625,6 +640,7 @@ class s2t20
 
 class s2t21
 {
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 3, 2, 1, 4, 5 };
@@ -657,6 +673,7 @@ class s2t21
 
 class s2t22
 {
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
@@ -713,6 +730,7 @@ public:
 
 class s2t24
 {
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
@@ -738,6 +756,7 @@ class s2t24
 
 class s2t25
 {
+public:
 //Which changes introduced independently will allow the code to compile and display “zero, one, nine,”? Choose all that apply.
 
   class A
@@ -789,6 +808,7 @@ class s2t25
 
 class s2t26
 {
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5, 5 };
@@ -811,6 +831,7 @@ class s2t26
 
 class s2t27
 {
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
@@ -837,6 +858,7 @@ class s2t27
 
 class s2t28
 {
+public:
   static int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
