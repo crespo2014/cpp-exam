@@ -21,6 +21,7 @@
 using namespace std;
 
 #include "test2.h"
+#include "test3.h"
 
 class t11
 {
