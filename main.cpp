@@ -29,6 +29,27 @@ using namespace std;
 
 int main()
 {
+  enum E{
+    a,b,c
+  };
+  E e;
+  e = static_cast<E>(1);
+  try{
+    throw 10.7;
+  }
+  catch (int i) {
+    std::cout << "int";
+  }
+  catch (float i) {
+    std::cout << "float";
+  }
+  catch (double i) {
+    std::cout << "float";
+  }
+  catch (...) {
+    std::cout << "none";
+  }
+  std::cout << endl;
 #if 0
   t11 e11;
   t12 e12;
