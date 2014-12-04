@@ -26,6 +26,7 @@ using namespace std;
 #include "test4.h"
 #include "unit5.h"
 #include "test5.h"
+#include "unit7.h"
 
 int main()
 {
