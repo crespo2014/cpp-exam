@@ -88,4 +88,9 @@ Array::~Array()
        delete[] _array;
 }
 
+int main()
+{
+  return 0;
+}
+
 
