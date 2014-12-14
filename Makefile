@@ -4,7 +4,15 @@
 cpp_files := $(wildcard *.cpp)
 cpp_out := $(cpp_files:%.cpp=%.out)
 
-%.out : %.cpp
-	g++ -o "$@" "$<"
+out_dir := build
+
+$(out_dir) : 
+	mkdir "$@"
+
+%.out : %.cpp | $(out_dir)
+	g++ -o "$(out_dir)/$@" "$<"
 
 all : $(cpp_out) 
+
+clean : 
+	rm -f *.out $(out_dir)/*.out
