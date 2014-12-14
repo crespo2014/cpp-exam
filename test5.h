@@ -23,7 +23,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v1(mynumbers, mynumbers + 7);
@@ -56,7 +56,7 @@ public:
   {
     return _Left < _Right;
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v1(mynumbers, mynumbers + 7);
@@ -90,7 +90,7 @@ public:
   {
     return int(a) < int(b);
   }
-  static int main()
+  int main()
   {
     double mynumbers[] = { 3.33, 9.19, 0.22, 2.12, 1.14, 4.45, 5.55 };
     vector<double> v1(mynumbers, mynumbers + 7);
@@ -121,7 +121,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     deque<int> d1(mynumbers, mynumbers + 7);
@@ -151,7 +151,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     deque<int> d1(mynumbers, mynumbers + 7);
@@ -184,7 +184,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     deque<int> d1(mynumbers, mynumbers + 7);
@@ -215,7 +215,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     deque<int> d1(mynumbers, mynumbers + 7);
@@ -246,7 +246,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     deque<int> d1(mynumbers, mynumbers + 7);
@@ -304,7 +304,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<Pocket9> v1(mynumbers, mynumbers + 7);
@@ -357,7 +357,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] =
     { 3, 9, 0, 2, 1, 4, 5};
@@ -416,7 +416,7 @@ public:
   {
     return int(_Left.getValue()) < int(_Right.getValue());
   }
-  static int main()
+  int main()
   {
     double mynumbers[] =
     { 3.33, 9.19, 0.22, 2.12, 1.14, 4.45, 5.55};
@@ -470,7 +470,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] =
     { 3, 9, 0, 2, 1, 4, 5};
@@ -526,7 +526,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] =
     { 3, 9, 0, 2, 1, 4, 5};
@@ -580,7 +580,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] =
     { 3, 9, 0, 2, 1, 4, 5};
@@ -635,7 +635,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] =
     { 3, 9, 0, 2, 1, 4, 5};
@@ -690,7 +690,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] =
     { 3, 9, 0, 2, 1, 4, 5};
@@ -746,7 +746,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] =
     { 3, 9, 0, 2, 1, 4, 5};
@@ -798,7 +798,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] =
     { 3, 9, 0, 2, 1, 4, 5};
@@ -850,7 +850,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] =
     { 3, 9, 0, 2, 1, 4, 5};
@@ -917,7 +917,7 @@ public:
   {
     return tolower(_Left.getValue()) < tolower(_Right.getValue());
   }
-  static int main()
+  int main()
   {
     string t[] =
     { "zzz", "zzZ", "yyY", "Zzz", "Yyy", "zZz", "yyy", "yYy"};    //LINE I
@@ -971,7 +971,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] =
     { 3, 9, 0, 2, 1, 4, 5};
@@ -1029,7 +1029,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] =
     { 3, 9, 0, 2, 1, 4, 5};
@@ -1087,7 +1087,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] =
     { 3, 9, 0, 2, 1, 4, 5};
@@ -1142,7 +1142,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] =
     { 3, 9, 0, 2, 1, 4, 5};

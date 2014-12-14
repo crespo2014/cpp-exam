@@ -21,7 +21,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v1(mynumbers, mynumbers + 7);
@@ -47,7 +47,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v1(mynumbers, mynumbers + 7);
@@ -75,7 +75,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     set<int> s1(mynumbers, mynumbers + 7);
@@ -105,7 +105,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     deque<int> d1(mynumbers, mynumbers + 7);
@@ -137,7 +137,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     set<int> s1(mynumbers, mynumbers + 7);
@@ -172,7 +172,7 @@ public:
   {
     a * 2;    //LINE I
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v1(mynumbers, mynumbers + 7);
@@ -205,7 +205,7 @@ public:
   {
     return a * 2;    //LINE I
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v1(mynumbers, mynumbers + 7);
@@ -238,7 +238,7 @@ public:
   {
     return a * 2;    //LINE I
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v1(mynumbers, mynumbers + 7);
@@ -271,7 +271,7 @@ public:
   {
     return a + b;
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v1(mynumbers, mynumbers + 7);
@@ -301,7 +301,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v1(mynumbers, mynumbers + 7);
@@ -335,7 +335,7 @@ public:
   {
     return v - 3 > 0;
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v1(mynumbers, mynumbers + 7);
@@ -369,7 +369,7 @@ public:
   {
     return v - 3 > 0;
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v1(mynumbers, mynumbers + 7);
@@ -398,7 +398,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     vector<int> v1(7, 1);
     fill(v1.begin() + 3, v1.end() - 1, 8);    //LINE I
@@ -425,7 +425,7 @@ public:
   {
     cout << i << ", ";
   }
-  static int main()
+  int main()
   {
     vector<int> v1(7, 1);
     fill(v1.begin() + 3, v1.end() - 1, 8);    //LINE I
@@ -467,7 +467,7 @@ public:
       return r;
     }
   };
-  static int main()
+  int main()
   {
     vector<int> v1(7);
     fill(v1.begin(), v1.end(), sequence(1, 2));    //LINE II
@@ -507,7 +507,7 @@ public:
       return start++;    //LINE I
     }
   };
-  static int main()
+  int main()
   {
     vector<int> v1(7);
     generate_n(v1.begin(), 7, Sequence(1));    //LINE II
@@ -546,7 +546,7 @@ public:
       return start++;    //LINE I
     }
   };
-  static int main()
+  int main()
   {
     vector<int> v1(7);
     //generate_n(v1.begin(), 7, Sequence());    //LINE II NOT default ctor
@@ -589,7 +589,7 @@ public:
   {
     return v % 2 == 0;
   }
-  static int main()
+  int main()
   {
     vector<int> v1(7);
     generate_n(v1.begin(), 7, Sequence(1));    //LINE I
@@ -634,7 +634,7 @@ public:
   {
     return v % 2 == 0;
   }
-  static int main()
+  int main()
   {
     vector<int> v1(7);
     // generate_n(v1.begin(), 7, Sequence());    //LINE I NOT default ctor
@@ -683,7 +683,7 @@ public:
       return 3 * (start++ % 2);    //LINE I
     }
   };
-  static int main()
+  int main()
   {
     vector<int> v1(7);
     generate(v1.begin(), v1.end(), Sequence(10));    //LINE II
@@ -733,7 +733,7 @@ public:
       return 3 * (start++ % 2);
     }
   };
-  static int main()
+  int main()
   {
     vector<int> v1(4);
     vector<int> v2(4);
@@ -785,7 +785,7 @@ public:
       return start++ % 7;
     }
   };
-  static int main()
+  int main()
   {
     vector<int> v1(3);
     generate(v1.begin(), v1.end(), Sequence(10));    //LINE I
@@ -840,7 +840,7 @@ public:
       return start++ % 7;
     }
   };
-  static int main()
+  int main()
   {
     vector<int> v1(4);
     vector<int> v2(4);
@@ -893,7 +893,7 @@ public:
       return start++ % 7;
     }
   };
-  static int main()
+  int main()
   {
     vector<int> v1(4);
     generate(v1.rbegin(), v1.rend(), Sequence(10));    //LINE I
@@ -943,7 +943,7 @@ public:
       return start++ % 7;
     }
   };
-  static int main()
+  int main()
   {
     vector<int> v1(4);
     generate(v1.rbegin(), v1.rend(), Sequence(10));    //LINE I
@@ -1000,7 +1000,7 @@ public:
       return v % 2 == 0;
     }
   };
-  static int main()
+  int main()
   {
     vector<int> v1(4);
     generate(v1.rbegin(), v1.rend(), Sequence(10));    //LINE I
@@ -1057,7 +1057,7 @@ public:
       return v % 2 == 0;
     }
   };
-  static int main()
+  int main()
   {
     vector<int> v1(4);
     generate(v1.rbegin(), v1.rend(), Sequence(10));    //LINE I

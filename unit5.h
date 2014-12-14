@@ -46,7 +46,7 @@ public:
     return toLower(a) < toLower(b);
   }
 
-  static int main()
+  int main()
   {
     string t[] = { "AB", "dC", "ba", "aB", "BC", "bc", "BA", "cd", "Cd", "ab" };
     vector < string > v1(10);

@@ -19,7 +19,7 @@ public:
     cout << i << ", ";    // Line I
   }
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v1(mynumbers, mynumbers + 7);
@@ -55,7 +55,7 @@ public:
     }
   };
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v1(mynumbers, mynumbers + 7);
@@ -116,7 +116,7 @@ public:
     }    //LINE I
   };
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<A> v1(mynumbers, mynumbers + 7);
@@ -142,7 +142,7 @@ class t0304
 {
 public:
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v1(mynumbers, mynumbers + 7);
@@ -204,7 +204,7 @@ public:
   };
 //LINE II
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<A> v1(mynumbers, mynumbers + 7);
@@ -244,7 +244,7 @@ public:
     }    //LINE I
   };
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v1(mynumbers, mynumbers + 7);
@@ -305,7 +305,7 @@ public:
       return (v.getA() == val.getA());
     }
   };
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<A> v1(mynumbers, mynumbers + 7);    //LINE I
@@ -338,7 +338,7 @@ class t0308
 {
 public:
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v(mynumbers, mynumbers + 7);
@@ -393,7 +393,7 @@ public:
     ;
     //LINE I
   };
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<A> v(mynumbers, mynumbers + 7);
@@ -419,7 +419,7 @@ class t0310
 {
 public:
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v(mynumbers, mynumbers + 7);
@@ -449,7 +449,7 @@ public:
   {
     return a == b;
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v(mynumbers, mynumbers + 7);
@@ -479,7 +479,7 @@ class t0312
 {
 public:
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 2, 2, 5 };
     vector<int> v(mynumbers, mynumbers + 7);
@@ -535,7 +535,7 @@ public:
   {
     return a == b;
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 2, 2, 5 };
     vector<A> v(mynumbers, mynumbers + 7);
@@ -566,7 +566,7 @@ class t0314
 {
 public:
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5, 6, 6, 9, 8, 2 };
     vector<int> v(mynumbers, mynumbers + 12);
@@ -608,7 +608,7 @@ public:
       this->a = a;
     }
   };
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5, 6, 6, 9, 8, 2 };
     deque<int> d(mynumbers, mynumbers + 12);
@@ -639,7 +639,7 @@ public:
       return (a > 0);
     }    //LINE I
   };
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5, 6, 6, 9, 8, 2 };
     vector<int> v(mynumbers, mynumbers + 12);
@@ -693,7 +693,7 @@ public:
       return (a.getA() < 6);
     }
   };
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5, 6, 6, 9, 8, 2 };
     set<A> d(mynumbers, mynumbers + 12);
@@ -724,7 +724,7 @@ public:
       return (a % 2) != 0;        //LINE I
     }
   };
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5, 6, 6, 9, 8, 2 };
     set<int> s(mynumbers, mynumbers + 12);
@@ -749,7 +749,7 @@ class t0319
 {
 public:
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5, 6, 6, 9, 8, 2 };
     vector<int> v1(mynumbers, mynumbers + 12);
@@ -781,7 +781,7 @@ public:
   {
     return b == a;        //LINE I
   }
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5, 6, 6, 9, 8, 2 };
     int othernumbers[] = { 3, 9, 0, 3, 1, 4, 3, 6, 6, 9, 8, 3 };
@@ -811,7 +811,7 @@ class t0321
 {
 public:
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5, 6, 6, 9, 8, 2 };
     vector<int> v1(mynumbers, mynumbers + 12);
@@ -852,7 +852,7 @@ public:
     }         //LINE I
   };
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5, 6, 6, 9, 8, 2 };
     set<A> s(mynumbers, mynumbers + 12);
@@ -876,7 +876,7 @@ class t0323
 {
 public:
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<int> v(mynumbers, mynumbers + 7);
@@ -930,7 +930,7 @@ public:
     }
     ;
   };
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     vector<A> v(mynumbers, mynumbers + 7);
@@ -956,7 +956,7 @@ class t0325
 {
 public:
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5, 6, 6, 9, 8, 2 };
     vector<int> v(mynumbers, mynumbers + 12);
@@ -1005,7 +1005,7 @@ public:
       return (a.getA() == b.getA());
     }         //LINE I
   };
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5, 6, 6, 9, 8, 2 };
     deque<int> d(mynumbers, mynumbers + 12);
@@ -1030,7 +1030,7 @@ class t0327
 {
 public:
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     map<int, int> m;
@@ -1066,7 +1066,7 @@ public:
     cout << i.first << ", ";
   }
 
-  static int main()
+  int main()
   {
     int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
     map<int, int> m;
