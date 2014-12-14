@@ -1,3 +1,17 @@
+#include <vector>
+#include <deque>
+#include <list>
+#include <stdio.h>
+#include <ostream>
+#include <iostream>
+#include <algorithm>
+#include <utility>
+#include <queue>
+#include <stack>
+#include <map>
+#include <set>
+
+using namespace std;
 class A
 {
   int a;
@@ -39,7 +53,7 @@ int main()
   set<A> s1(mynumbers, mynumbers + 7);
   A a(5);
   Founder f(a);
-  //find_if(s1.begin(), s1.end(), f.val);    //LINE II
+  find_if(s1.begin(), s1.end(), f.val);    //LINE II
   if (find_if(v1.begin(), v1.end(), f) != v1.end())
   {    //LINE III
     cout << "Found!\n";

@@ -1,3 +1,17 @@
+#include <vector>
+#include <deque>
+#include <list>
+#include <stdio.h>
+#include <ostream>
+#include <iostream>
+#include <algorithm>
+#include <utility>
+#include <queue>
+#include <stack>
+#include <map>
+#include <set>
+
+using namespace std;
 int main()
 {
   int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
@@ -7,8 +21,8 @@ int main()
   vector<int>::iterator founded = find(v1.begin(), v1.end(), 3);    //LINE I
   if (founded != v1.end())    //LINE II
   cout << "founded" << ", ";
-//    cout << find(d1.begin(), d1.end(), 9) << ", ";    //LINE III
-//    cout << find(s1.begin(), s1.end(), 6);    //LINE IV
+  cout << find(d1.begin(), d1.end(), 9) << ", ";    //LINE III
+  cout << find(s1.begin(), s1.end(), 6);    //LINE IV
   return 0;
 }
 /*

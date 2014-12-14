@@ -1,3 +1,17 @@
+#include <vector>
+#include <deque>
+#include <list>
+#include <stdio.h>
+#include <ostream>
+#include <iostream>
+#include <algorithm>
+#include <utility>
+#include <queue>
+#include <stack>
+#include <map>
+#include <set>
+
+using namespace std;
 struct myprinter
 {
   void operator()(int i)
@@ -12,10 +26,10 @@ int main()
   vector<int> v1(mynumbers, mynumbers + 7);
   deque<int> d1(mynumbers, mynumbers + 7);
   set<int> s1(mynumbers, mynumbers + 7);
-  //v1.pop_back(5);    // Line I
+  v1.pop_back(5);    // Line I
   for_each(s1.begin(), s1.end(), myprinter());    // Line II
   for_each(d1.begin(), d1.end(), *(new myprinter()));    // Line III
-  //for_each(v1.begin(), v1.end(), myprinter);    //Line IV
+  for_each(v1.begin(), v1.end(), myprinter);    //Line IV
   return 0;
 }
 /*

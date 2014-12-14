@@ -1,3 +1,17 @@
+#include <vector>
+#include <deque>
+#include <list>
+#include <stdio.h>
+#include <ostream>
+#include <iostream>
+#include <algorithm>
+#include <utility>
+#include <queue>
+#include <stack>
+#include <map>
+#include <set>
+
+using namespace std;
 int main()
 {
   int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
