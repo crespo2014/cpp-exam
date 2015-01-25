@@ -10,7 +10,7 @@ $(out_dir) :
 	mkdir "$@"
 
 %.out : %.cpp | $(out_dir)
-	g++ -o "$(out_dir)/$@" "$<"
+	g++ -g -o "$(out_dir)/$@" "$<"
 
 all : $(cpp_out) 
 
