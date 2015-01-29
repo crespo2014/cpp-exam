@@ -11,6 +11,11 @@ $(out_dir) :
 
 %.out : %.cpp | $(out_dir)
 	g++ -g -o "$(out_dir)/$@" "$<"
+	
+e7_files := $(wildcard e7*.cpp)
+e7_out := $(e7_files:%.cpp=%.out)
+
+e7 : $(e7_out)
 
 all : $(cpp_out) 
 
