@@ -8,129 +8,21 @@
 
 
 
-Exam
-CPP - Chapter 8 Assessment
-Time left: 59:56
-What will happen when you attempt to compile and run the following code?
 
-#include <iostream>
-using namespace std;
-int main()
-{
-        cout<<127<<", ";
-        cout.setf(ios::hex);//LINE I
-        cout<<127<<", ";
-        cout.setf (ios::showbase );  //LINE II
-        cout<<127<<", ";
-        return 0;
-}
-
-Select correct answer (single choice)
-program outputs: 127, 7f, 7f
-compilation error in LINE I
-program outputs: 127, 7f, 0x7f
-program outputs: 127, 127, 127,
-compilation error in LINE II
-program outputs: 127, 0x7f, 0x7f
-runtime error at LINE II
 
 What will happen when you attempt to compile and run the following code?
 
-#include <iostream>
-using namespace std;
-int main()
-{
-        cout<<127<<", ";
-        cout.setf(ios::hex);//LINE I
-        cout<<127<<", ";
-        cout.setf (ios::showbase, ios::basefield );  //LINE II
-        cout<<127<<", ";
-        return 0;
-}
-
-
-Select correct answer (single choice)
-compilation error in LINE II
-program outputs: 127, 127, 127,
-program outputs: 127, 7f, 0x7f
-compilation error in LINE I
-program outputs: 127, 7f, 7f
-program outputs: 127, 0x7f, 0x7f
-runtime error at LINE II
 
 What will happen when you attempt to compile and run the following code?
 
-#include <iostream>
-using namespace std;
-int main()
-{
-        cout<<127<<", ";
-        cout.setf(ios::hex, ios::basefield);//LINE I
-        cout<<127<<", ";
-        cout.setf (ios::showbase);  //LINE II
-        cout<<127<<", ";
-        return 0;
-}
 
-
-Select correct answer (single choice)
-program outputs: 127, 7f, 7f
-runtime error at LINE II
-program outputs: 127, 127, 127,
-compilation error in LINE II
-program outputs: 127, 0x7f, 0x7f
-program outputs: 127, 7f, 0x7f
-compilation error in LINE I
 
 What will happen when you attempt to compile and run the following code?
 
-#include <iostream>
-using namespace std;
-int main()
-{
-        cout<<127<<", ";
-        cout.setf(ios::hex, ios::basefield);
-        cout.setf (ios::showbase);  //LINE I
-        cout<<127<<", ";
-        cout.unsetf(ios::showbase);  //LINE II
-        cout<<127<<", ";
-        return 0;
-}
-
-
-Select correct answer (single choice)
-program outputs: 127, 7f, 0x7f
-runtime error at LINE II
-compilation error in LINE I
-compilation error in LINE II
-program outputs: 127, 127, 127,
-program outputs: 127, 0x7f, 7f
-program outputs: 127, 0x7f, 0x7f
 
 What will happen when you attempt to compile and run the following code?
 
-#include <iostream>
-using namespace std;
-int main()
-{
-        cout<<127<<", ";
-        cout.setf(ios::oct, ios::basefield);
-        cout.setf (ios::showbase);  //LINE I
-        cout<<127<<", ";
-        cout.unsetf(ios::showbase);  //LINE II
-        cout<<127<<", ";
-        return 0;
-}
 
-
-Select correct answer (single choice)
-compilation error in LINE II
-program outputs: 127, 0177, 0177
-program outputs: 127, 127, 127,
-compilation error in LINE I
-runtime error at LINE II
-program outputs: 127, 0177, 177
-program outputs: 127, 0x177, 177
 
 What will happen when you attempt to compile and run the following code?
 
