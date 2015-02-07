@@ -15,7 +15,7 @@ int main ()
         vector<int> v1(mynumbers, mynumbers + 7);
         fstream outfile("output.txt", ios::trunc|ios::out);
         int i ;
-        while (outfile.good());//LINE I
+        while (outfile.good()); //LINE I
         {
                 outfile>>i;//LINE II
                 v1.push_back(i);
