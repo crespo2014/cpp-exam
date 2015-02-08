@@ -20,7 +20,7 @@
 <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
 <booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="false"/>
 <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN_SYMBOL" value="main"/>
-<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="build/e8/e8_26.out"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="build/main.out"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="cpp-exam"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="cdt.managedbuild.toolchain.gnu.base.551795380"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
