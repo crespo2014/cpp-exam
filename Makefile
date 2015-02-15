@@ -3,7 +3,8 @@
 
 out_dir := build
 
-cpp_files := $(wildcard *.cpp) $(wildcard e8/*.cpp) $(wildcard e9/*.cpp)
+cpp_files := $(wildcard *.cpp) $(wildcard e8/*.cpp) $(wildcard e9/*.cpp) $(wildcard cpp-final/*.cpp)
+#cpp_files := $(patsubst */,,$(cpp_files))
 cpp_out := $(addprefix $(out_dir)/,$(cpp_files:%.cpp=%.out))
 
 

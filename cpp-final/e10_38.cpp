@@ -1,6 +1,6 @@
 
 
-What will happen when you attempt to compile and run the following code assuming that you will enter following sequence: 6 5 7<enter>?
+//What will happen when you attempt to compile and run the following code assuming that you will enter following sequence: 6 5 7<enter>?
 
 #include <iostream>
 #include <string>
