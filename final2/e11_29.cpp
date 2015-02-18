@@ -1,5 +1,5 @@
 
-What will happen when you attempt to compile and run the following code?
+//What will happen when you attempt to compile and run the following code?
 
 #include <vector>
 #include <iostream>
@@ -20,7 +20,7 @@ int main() {
         return 0;
 }
 
-
+/*
 Select correct answer (single choice)
 compilation error in LINE I
 program outputs: 1, 1, 0, 2, -1, 0,
@@ -28,3 +28,4 @@ program outputs:-7, -5, -1, 1, 5, 7,
 runtime error at LINE I
 compilation error in LINE II
 program outputs: 0, -1, 2, 0, 1, 1,
+*/

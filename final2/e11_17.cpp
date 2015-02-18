@@ -1,5 +1,5 @@
 
-What will happen when you attempt to compile and run the following code?
+//What will happen when you attempt to compile and run the following code?
 
 #include <deque>
 #include <iostream>
@@ -17,7 +17,7 @@ int main() {
         return 0;
 }
 
-
+/*
 Select correct answer (single choice)
 compilation error in LINE I
 compilation error in LINE II
@@ -25,3 +25,4 @@ program outputs: 8, 9, 7, 6, 4, 4,
 runtime error at LINE I
 program outputs: 8, 9, 7, 6, 4, 1, 4
 program outputs: 8, 9, 7, 6, 4, 1,
+*/

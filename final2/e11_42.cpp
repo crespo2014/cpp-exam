@@ -1,5 +1,5 @@
 
-What will happen when you attempt to compile and run the following code assuming that you will enter following sequence: i j k jk q<enter>?
+//What will happen when you attempt to compile and run the following code assuming that you will enter following sequence: i j k jk q<enter>?
 
 #include <iostream>
 #include <string>
@@ -23,7 +23,7 @@ int main ()
         return 0;
 }
 
-
+/*
 Select correct answer (single choice)
 compilation error in LINE II
 program outputs: i, j, k, jk, q, q,
@@ -31,3 +31,4 @@ program outputs: i, j, k, jk,
 runtime error at LINE I
 program outputs: i, j, k, jk, q,
 compilation error in LINE I
+*/

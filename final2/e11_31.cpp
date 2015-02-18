@@ -1,6 +1,6 @@
 
 
-What will happen when you attempt to compile and run the following code?
+//What will happen when you attempt to compile and run the following code?
 
 #include <deque>
 #include <iostream>
@@ -23,7 +23,7 @@ int main() {
         return 0;
 }
 
-
+/*
 Select correct answer (single choice)
 program outputs: 32, 36, 28, 24, 16, 4,
 compilation error in LINE II
@@ -31,3 +31,4 @@ program outputs: 4, 10, 14, 16, 18, 20,
 compilation error in LINE I
 program outputs: 18, 20, 16, 14, 10, 4,
 runtime error at LINE I
+*/

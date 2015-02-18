@@ -1,6 +1,6 @@
 
 
-What will happen when you attempt to compile and run the following code?
+//What will happen when you attempt to compile and run the following code?
 
 #include <vector>
 #include <queue>
@@ -18,7 +18,7 @@ int main()
         return 0;
 }
 
-
+/*
 Select correct answer (single choice)
 compilation error in LINE II
 program outputs: 4, 3
@@ -26,3 +26,4 @@ runtime error at LINE II
 program outputs: 4, 4
 program outputs: 5, 5
 compilation error in LINE I
+*/

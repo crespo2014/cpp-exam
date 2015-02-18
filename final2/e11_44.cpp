@@ -1,6 +1,6 @@
 
 
-What will happen when you attempt to compile and run the following code?
+//What will happen when you attempt to compile and run the following code?
 
 #include <iostream>
 using namespace std;
@@ -16,7 +16,7 @@ int main()
         return 0;
 }
 
-
+/*
 Select correct answer (single choice)
 runtime error at LINE I
 program outputs: 2
@@ -24,3 +24,4 @@ compilation error in LINE II
 compilation error in LINE I
 program outputs: 4
 program outputs: 1
+*/

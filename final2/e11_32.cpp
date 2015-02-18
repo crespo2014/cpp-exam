@@ -1,6 +1,6 @@
 
 
-What will happen when you attempt to compile and run the following code?
+//What will happen when you attempt to compile and run the following code?
 
 #include <vector>
 #include <iostream>
@@ -24,7 +24,7 @@ int main() {
         return 0;
 }
 
-
+/*
 Select correct answer (single choice)
 program outputs: 0
 compilation error in LINE II
@@ -33,3 +33,4 @@ compilation error in LINE III
 compilation error in LINE I
 program outputs: 3
 program outputs: 4
+*/

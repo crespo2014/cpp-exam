@@ -1,6 +1,6 @@
 
 
-What happens when you attempt to compile and run the following code?
+//What happens when you attempt to compile and run the following code?
 
 #include <iostream>
 #include <map>
@@ -20,7 +20,7 @@ int main(){
         return 0;
 }
 
-
+/*
 Select correct answer (single choice)
 program outputs: one, , four, six, seven, eight, nine, 7
 compilation error in LINE I
@@ -29,3 +29,4 @@ compilation error in LINE II
 program outputs: one, , four, six, seven, eight, nine,
 runtime error at LINE II
 program outputs: seventh element, one, , four, six, seven, eight, nine, 7
+*/
