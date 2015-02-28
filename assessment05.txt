@@ -1,0 +1,930 @@
+
+Exam
+CPP - Chapter 5 Assessment
+Time left: 59:52
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <set>
+#include <iostream>
+#include <functional>
+#include <algorithm>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<int> v1(mynumbers, mynumbers + 7);
+        sort(v1.begin(), v1.end(), greater<int>());//LINE I
+        for_each(v1.begin(), v1.end(), printer);//LINE II
+        return 0;
+}
+ 
+Select correct answer (single choice)
+runtime error at LINE I
+program outputs: 3, 9, 0, 2, 1, 4, 5,
+program outputs: 0, 1, 2, 3, 4, 5, 9,
+compilation error in LINE II
+compilation error in LINE I
+you can't call sort function on v1 vector
+program outputs: 9, 5, 4, 3, 2, 1, 0,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+bool Compare(int _Left, int _Right) { return _Left < _Right; }
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<int> v1(mynumbers, mynumbers + 7);
+        remove(v1.begin(), v1.end(), 1);//LINE I
+        sort(v1.begin(), v1.end(), Compare);//LINE II
+        for_each(v1.begin(), v1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answers (multiple choice)
+program outputs: 0, 2, 3, 4, 5, 5, 9,
+program outputs: 0, 1, 2, 3, 4, 5, 9,
+size of v1 vector is 6
+program outputs: 0, 2, 3, 4, 5, 9,
+compilation error in LINE I
+size of v1 vector is 7
+compilation error in LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void printer(double i) {
+        cout << i << ", ";
+}
+bool Compare(double a, double b) { return int(a)<int(b);}
+int main() {
+        double mynumbers[] = { 3.33, 9.19, 0.22, 2.12, 1.14, 4.45, 5.55 };
+        vector<double> v1(mynumbers, mynumbers + 7);
+        stable_sort(v1.begin(), v1.end(), Compare);//LINE I
+        remove(v1.begin(), v1.end(), 2.12);//LINE II
+        for_each(v1.begin(), v1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answers (multiple choice)
+size of v1 vector is 7
+compilation error in LINE II
+compilation error in LINE I
+program outputs: 0.22, 1.14, 3.33, 4.45, 5.55, 9.19, 9.19,
+program outputs: 0.22, 1.14, 3.33, 4.45, 5.55, 9.19,
+size of v1 vector is 6
+program outputs: 0.22, 1.14, 2.22, 3.33, 4.45, 5.55, 9.19,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        deque<int> d1(mynumbers, mynumbers + 7);
+        deque<int>::iterator it = lower_bound(d1.begin(), d1.end(), 3);
+        d1.push_back(6);//LINE I
+        for_each(it, d1.end(), printer);//LINE II
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 4, 5,
+runtime error at LINE II
+runtime error at LINE I
+program outputs: 4, 5, 6,
+compilation error in LINE II
+compilation error in LINE I
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        deque<int> d1(mynumbers, mynumbers+7);
+        sort(d1.begin(), d1.end());
+        d1.push_back(6);
+        deque<int>::iterator it = upper_bound(d1.begin(), d1.end(), 3);//LINE I
+        for_each(it, d1.end(), printer);//LINE II
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 4, 5, 6, 9,
+runtime error at LINE II
+runtime error at LINE I
+compilation error in LINE II
+program outputs: 4, 5, 9, 6,
+program outputs: 4, 5, 6,
+compilation error in LINE I
+program outputs: 4, 5, 9,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        deque<int> d1(mynumbers, mynumbers + 7);
+        sort(d1.begin(), d1.end());
+        d1.push_back(3);//LINE I
+        pair<deque<int>::iterator, deque<int>::iterator > result = equal_range(d1.begin(), d1.end(), 3);//LINE II
+        for_each(result.first, result.second, printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE I
+runtime error at LINE I
+program outputs: 3, 3,
+compilation error in LINE II
+runtime error at LINE II
+program outputs: 3,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        deque<int> d1(mynumbers, mynumbers + 7);
+        d1.push_back(3);//LINE I
+        sort(d1.begin(), d1.end());
+        pair<deque<int>::iterator, deque<int>::iterator > result = equal_range(d1.begin(), d1.end(), 3);//LINE II
+        for_each(result.first, result.second, printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 3, 3,
+compilation error in LINE I
+program outputs: 3,
+runtime error at LINE I
+runtime error at LINE II
+compilation error in LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+#include <set>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        deque<int> d1(mynumbers, mynumbers + 7);
+        set<int> s1(mynumbers, mynumbers+7);
+        cout<<binary_search(s1.begin(),s1.end(), 1)<<", "//LINE I
+                <<binary_search(d1.begin(),d1.end(), 6)<<endl;//LINE II
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+runtime error at LINE II
+runtime error at LINE I
+program outputs: 1, 1,
+compilation error in LINE I
+program outputs: 0, 0,
+program outputs: 1, 0,
+compilation error in LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<Pocket> v1(mynumbers, mynumbers + 7);
+        sort(v1.begin(), v1.end());//LINE I
+        remove(v1.begin(), v1.end(), 2);//LINE II
+        for_each(v1.begin(), v1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 0, 2, 3, 4, 5, 9,
+runtime error at LINE II
+program outputs: 0, 1, 3, 4, 5, 9,
+runtime error at LINE I
+compilation error in LINE II
+compilation error in LINE I
+program outputs: 0, 1, 2, 3, 4, 5, 9,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator > (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<Pocket> v1(mynumbers, mynumbers + 7);
+        sort(v1.begin(), v1.end(), greater<Pocket>());//LINE I
+        for_each(v1.begin(), v1.end(), printer);//LINE II
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE I
+runtime error at LINE II
+compilation error in LINE II
+program outputs: 9, 5, 4, 3, 2, 1, 0,
+runtime error at LINE I
+program outputs: 1, 2, 3, 4, 5, 9,
+program outputs: 0, 1, 2, 3, 4, 5, 9,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+template<typename T>
+class Pocket {
+        T value;
+public:
+        Pocket(T value):value(value){}
+        T getValue() const
+        { return value; }  
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+template<typename T>
+ostream & operator <<(ostream & stream, const Pocket<T> & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket<double> i) {
+        cout << i << ", ";
+}
+bool Compare(const Pocket<double> &_Left, const Pocket<double> &_Right)
+{ return int(_Left.getValue()) < int(_Right.getValue());}
+int main() {
+        double mynumbers[] = { 3.33, 9.19, 0.22, 2.12, 1.14, 4.45, 5.55 };
+        vector<double> v1(mynumbers, mynumbers + 7);//LINE I
+        stable_sort(v1.begin(), v1.end(), Compare);//LINE II
+        for_each(v1.begin(), v1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE II
+you can't call sort function on vector with elements of 'double' type
+program outputs: 0.22, 1.14, 2.12, 3.33, 4.45, 5.55, 9.19,
+runtime error at LINE II
+compilation error in LINE I
+program outputs: 0, 1, 2, 3, 4, 5, 9,
+program outputs: 3.33, 9.19, 0.22, 2.12, 1.14, 4.45, 5.55,
+runtime error at LINE I
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        deque<Pocket> d1(mynumbers, mynumbers + 7);
+        d1.push_back(6);//LINE I
+        deque<Pocket>::iterator it = lower_bound(d1.begin(), d1.end(), 3);//LINE II
+        for_each(it, d1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 3, 4, 5,
+compilation error in LINE II
+program outputs: 3, 4, 5, 6,
+runtime error at LINE II
+program outputs: 4, 5, 6,
+program outputs: 4, 5,
+compilation error in LINE I
+runtime error at LINE I
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        deque<Pocket> d1(mynumbers, mynumbers + 7);
+        sort(d1.begin(), d1.end());
+        deque<Pocket>::iterator it = upper_bound(d1.begin(), d1.end(), Pocket(2));//LINE I
+        for_each(it+1, d1.end(), printer); //LINE II
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE I
+program outputs: 3, 4, 5,
+compilation error in LINE II
+runtime error at LINE II
+program outputs: 3, 4, 5, 9,
+runtime error at LINE I
+program outputs: 4, 5, 9
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        deque<Pocket> d1(mynumbers, mynumbers + 7);
+        d1.push_back(3);
+        sort(d1.begin(), d1.end());//LINE I
+        pair<deque<Pocket> ::iterator, deque<Pocket>::iterator > result = equal_range(d1.begin(), d1.end(), Pocket(4));//LINE II
+        for_each(result.first, result.second, printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 4,
+runtime error at LINE II
+program outputs: 4, 4,
+compilation error in LINE I
+runtime error at LINE I
+program outputs: 3, 4,
+compilation error in LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        deque<Pocket> d1(mynumbers, mynumbers + 7);
+        sort(d1.begin(), d1.end());
+        d1.push_back(3);//LINE I
+        pair<deque<Pocket> ::iterator, deque<Pocket>::iterator > result = equal_range(d1.begin(), d1.end(), Pocket(3));//LINE II
+        for_each(result.first, result.second, printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE I
+compilation error in LINE II
+program outputs: 3, 4,
+program outputs: 3, 3,
+runtime error at LINE II
+runtime error at LINE I
+program outputs: 3,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <set>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        deque<Pocket> d1(mynumbers, mynumbers + 7);
+        sort(d1.begin(), d1.end());//LINE I
+        set<Pocket> s1(mynumbers, mynumbers + 7);
+        cout<<binary_search(s1.begin(),s1.end(), Pocket(3))<<", "//LINE II
+                <<binary_search(d1.begin(),d1.end(), Pocket(2))<<endl;
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 1, 0,
+program outputs: 1, 1,
+compilation error in LINE I
+program outputs: 3, 2
+runtime error at LINE II
+compilation error in LINE II
+program outputs: 2, 3,
+runtime error at LINE I
+
+What will happen when you attempt to compile and run the following code?
+
+#include <set>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        set<Pocket> s1(mynumbers, mynumbers + 7);
+        sort(s1.begin(), s1.end());//LINE I
+        for_each(s1.begin(), s1.end(), printer);//LINE II
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 0, 1, 2, 3, 4, 5, 9,
+program outputs: 0, 1, 2, 3, 4, 5,
+runtime error at LINE I
+compilation error in LINE II
+compilation error in LINE I
+runtime error at LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<Pocket> s1(mynumbers, mynumbers + 7);//LINE I
+        sort(s1.begin(), s1.end(), greater<Pocket>());//LINE II
+        for_each(s1.begin(), s1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+runtime error at LINE II
+runtime error at LINE I
+program outputs: 9, 5, 4, 3, 2, 1, 0,
+compilation error in LINE I
+compilation error in LINE II
+program outputs: 0, 1, 2, 3, 4, 5, 9,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator > (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<Pocket> s1(mynumbers, mynumbers + 7);//LINE I
+        sort(s1.begin(), s1.end(), greater<Pocket>());//LINE II
+        for_each(s1.begin(), s1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+runtime error at LINE I
+compilation error in LINE II
+program outputs: 9, 5, 4, 3, 2, 1, 0,
+compilation error in LINE I
+runtime error at LINE II
+program outputs: 0, 1, 2, 3, 4, 5, 9,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <string>
+#include <iostream>
+#include <algorithm>
+#include <ctype.h>
+using namespace std;
+template<typename T>
+class Pocket {
+        T value;
+public:
+        Pocket(T value):value(value){}
+        T getValue() const
+        { return value; }  
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+template<typename T>
+ostream & operator <<(ostream & stream, const Pocket<T> & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket<string> i) {
+        cout << i << ", ";
+}
+string tolower(const string & s) {
+        string tmp(s);
+        for(unsigned i = 0; i< tmp.size(); ++i){
+                tmp[i] = tolower(tmp[i]);         }
+        return tmp; }
+bool Compare(const Pocket<string> &_Left, const Pocket<string> &_Right)
+        {return tolower(_Left.getValue())<tolower(_Right.getValue()); }
+int main() {
+        string t[]={"zzz", "zzZ","yyY", "Zzz", "Yyy", "zZz", "yyy","yYy"};//LINE I
+        vector<Pocket<string> > v1; v1.assign(t, t+8);//LINE II
+        stable_sort(v1.begin(), v1.end(), Compare);
+        for_each(v1.begin(), v1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: yyy, yyy, yyy, yyy, zzz, zzz, zzz, zzz,
+compilation error in LINE II
+runtime error at LINE II
+program outputs: yyY, Yyy, yyy, yYy, zzz, zzZ, Zzz, zZz,
+runtime error at LINE I
+program outputs: YYY, YYY, YYY, YYY, ZZZ, ZZZ, ZZZ, ZZZ,
+compilation error in LINE I
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator > (const Pocket & _Right) const
+        { return value > _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        deque<Pocket> d1(mynumbers, mynumbers + 7);
+        sort(d1.begin(), d1.end(), greater<Pocket>());//LINE I
+        deque<Pocket>::iterator it = lower_bound(d1.begin(), d1.end(), 3, greater<Pocket>());//LINE II
+        for_each(it, d1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+runtime error at LINE I
+runtime error at LINE II
+program outputs: 0, 1, 2, 3,
+compilation error in LINE I
+program outputs: 3, 4, 5, 9,
+compilation error in LINE II
+program outputs: 3, 2, 1, 0
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+        bool operator > (const Pocket & _Right) const
+        {         return _Right < value; } //LINE I
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        deque<Pocket> d1(mynumbers, mynumbers + 7);
+        sort(d1.begin(), d1.end());
+        deque<Pocket>::iterator it = upper_bound(d1.begin(), d1.end(), Pocket(5), greater<Pocket>());//LINE II
+        for_each(it, d1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE II
+compilation error in LINE I
+program outputs: 0, 1, 2, 3, 4, 5, 9,
+runtime error at LINE I
+program outputs: 5,
+runtime error at LINE II
+program outputs: 5, 9,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+        bool operator > (const Pocket & _Right) const
+        { return value > _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        deque<Pocket> d1(mynumbers, mynumbers + 7);
+        d1.push_back(3);
+        sort(d1.begin(), d1.end(), greater<Pocket>());//LINE I
+        pair<deque<Pocket> ::iterator, deque<Pocket>::iterator > result =
+                equal_range(d1.begin(), d1.end(), Pocket(3), greater<Pocket>());//LINE II
+        for_each(result.first, result.second, printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 3,
+program outputs: 3, 3,
+compilation error in LINE I
+runtime error at LINE II
+runtime error at LINE I
+compilation error in LINE II
+program outputs: 3, 4,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <set>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        deque<Pocket> d1(mynumbers, mynumbers + 7);
+        sort(d1.begin(), d1.end());
+        set<Pocket> s1(mynumbers, mynumbers + 7);
+        cout<<binary_search(s1.begin(),s1.end(), Pocket(3))<<", "//LINE I
+                <<binary_search(d1.begin(),d1.end(), Pocket(5))<<endl;//LINE II
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 3, 3,
+program outputs: 3, 5
+program outputs: 1, 0,
+compilation error in LINE II
+program outputs: 1, 1,
+compilation error in LINE I
+          

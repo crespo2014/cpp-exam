@@ -1,0 +1,1219 @@
+
+Exam
+CPP - Practice Final Assessment
+Time left: 1:29:53
+What will happen when you attempt to compile and run the following code? Choose all that apply:
+
+#include <vector>
+#include <iostream>
+int main ()
+{
+        std::vector<int>        v1;
+        v1.push_back(17);                        // LINE I
+        std::cout<<v1.front()<<", "<<v1.back()<<std::endl;                // LINE II
+        return 0;
+}
+ 
+Select correct answers (multiple choice)
+code compiles and executes successfully
+program outputs: 0, 17,
+compilation error in LINE II
+program outputs: 0, 0,
+program outputs: 17, 17,
+compilation error in LINE I
+
+What will happen when you attempt to compile and run the following code? Choose all that apply:
+
+#include <deque>
+#include <iostream>
+using namespace std;
+template<typename T> ostream & print(T & start, T & end)
+{
+        for(; start != end; ++start)
+                cout<< *start<< " ";
+        return cout;
+}
+int main()
+{
+        int tab[]={8, 7, 6, 4, 2, 1};
+        deque<int> d1(tab, tab+6);
+        deque<int> d2;
+        deque<int>::iterator it;
+        for(it = d1.begin(); it != d1.end(); ++it)
+        {
+                d2.push_back(d1[d1.end()-it-1]);        //LINE I
+        }
+        print(d2.rbegin(), d2.rend()) << endl;        //LINE II
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 1, 2, 4, 6, 7, 8,
+program outputs: 8, 7, 6, 4, 2, 1
+compilation error in LINE II
+compilation error in LINE I
+runtime error at LINE I
+program outputs: 1, 8,
+
+Which method or methods from std::list class can delete all the elements from the collection in one call:
+Select correct answers (multiple choice)
+emptier();;;;
+there is no such method
+delete();;;;
+erase();;;;
+empty_all();;;;
+clear();;;;
+
+What will happen when you attempt to compile and run the following code? Choose all that apply:
+
+#include <list>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+template<typename T> ostream & print(const T & start, const T & end)
+{
+        T tmp = start;
+        for(; tmp != end; ++tmp)
+        {
+                cout<< *tmp ;
+        }
+        return cout;
+}
+class A
+{
+public:
+        int a;
+public:
+        A(int a):a(a) {}
+};
+void fill (const int table[], unsigned size, vector<A*> & v)
+{
+        for(unsigned i = 0; i < size; ++i)
+        {
+                v.push_back(new A(table[i]));                        //LINE I
+        }
+}
+ostream & operator<<(ostream & c, const A & o)
+{
+        c << o.a << ", ";
+        return c;
+}
+int main()
+{
+        int tab[]={8, 7, 6, 4, 2, 1};
+        vector<A*> v1;
+        fill(tab, 6, v1);
+        vector<A*>::iterator it;
+        list<A> l1;
+        for(it = v1.begin(); it != v1.end(); ++it)
+        {
+                l1.push_front(**it);
+        }
+        print(l1.begin(), l1.end())<<endl;
+        return 0;                //LINE II
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 8, 1,
+program outputs: 1, 2, 4, 6, 7, 8,
+program outputs: 8, 7, 6, 4, 2, 1
+compilation error in LINE I
+runtime error at LINE I
+compilation error in LINE II
+
+Which of the following examples shows the proper way to create a new priority_queue container assuming all necessary declarations has been performed. Choose all that apply:
+Select correct answers (multiple choice)
+list_queue<int> l; priority_queue<int> q(l); ;;;;
+vector<int> v; priority_queue<int> q(v); ;;;;
+deque<int> d; priority_queue<int> q(d);
+deque<int> d; priority_queue<int> q(d.begin(), d.end()); ;;;;
+queue<int> q; ;;;;
+
+Which container class can be used as underlaying container for stack. Choose all that apply:
+Select correct answers (multiple choice)
+multimap
+vector;;;;
+set;;;;
+deque;;;;
+list;;;;
+
+What will happen when you attempt to compile and run the following code?
+
+#include <iostream>
+#include <set>
+#include <vector>
+using namespace std;
+int main(){
+        int mynumbers[] =        { 8, 9, 7, 6, 4, 1 };
+        vector<int> v(mynumbers, mynumbers+6);
+        set<int> s1(v.begin(),v.end());
+        s1.insert(v.begin(),v.end());
+        s1.insert(v.begin(),v.end());//LINE I
+        set<int>::iterator found = s1.find(9);
+        for (; found!=s1.end(); ++found)
+                cout << *found << ", ";
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 1,
+runtime error at LINE I
+compilation error in LINE I
+program outputs: 9,
+program outputs: 0,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <iostream>
+#include <set>
+#include <vector>
+using namespace std;
+template<class T> void print(T start, T end) {
+        while (start != end) {
+                std::cout << *start << ", "; start++;
+        }
+}
+int main(){
+        int mynumbers[] =        { 8, 6, 4, 1 };
+        vector<int> v(mynumbers, mynumbers+6);
+        set<int> s(v.begin(),v.end());
+        for(int i=4; i>0; i  ) {
+                int x = *(s.begin()); //LINE I
+                s.pop();                 //LINE II
+                v.push_back(i+x);
+        }
+        print(v.begin(), v.end()); print(s.begin(), s.end());cout<<endl;
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 8, 6, 4, 1,
+compilation error in LINE II
+compilation error in LINE I
+program outputs: 8, 6, 4, 1, 8, 6, 4, 1,
+program outputs: 8, 6, 4, 1, 1, 4, 6, 8
+runtime error at LINE I
+
+What will happen when you attempt to compile and run the following code?
+
+#include <iostream>
+#include <set>
+#include <vector>
+#include <functional>
+using namespace std;
+int main(){
+        int mynumbers[] =        { 8, 9, 7, 6, 4, 1 };
+        vector<int> v(mynumbers, mynumbers+6);
+        multiset<int> s1(v.begin(),v.end());
+        multiset<int, greater_equal<int> > s2(v.begin(), v.end());//LINE I
+        s2.insert(3);//LINE II
+        for(multiset<int, greater<int> >::iterator i=s2.begin();i!= s2.end(); i++)
+                cout<<*i<<", ";
+        cout<<endl;
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 8, 9, 7, 6, 4, 1, 3,
+compilation error in LINE I
+program outputs: 9, 8, 7, 6, 4, 3, 1,
+compilation error in LINE II
+program outputs: 9, 8, 7, 6, 4, 1,
+runtime error at LINE I
+
+What happens when you attempt to compile and run the following code?
+
+#include <iostream>
+#include <set>
+#include <vector>
+using namespace std;
+int main(){
+        int mynumbers[] =        { 8, 9, 7, 6, 4, 1, 6 };
+        multiset<int> s1(mynumbers, mynumbers+6);//LINE I
+        s1.insert(s1.find(9), 5);                                 //LINE II
+        for(multiset<int>::iterator i=s1.begin();i!= s1.end(); i++)
+                cout<<*i<<", ";
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 1, 4, 5, 6, 6, 7, 8, 9,
+program outputs: 1, 4, 5, 6, 7, 8, 9,
+compilation error in LINE I
+program outputs: 1, 4, 5, 6, 7, 8,
+compilation error in LINE II
+runtime error at LINE I
+
+What happens when you attempt to compile and run the following code?
+
+#include <iostream>
+#include <set>
+#include <vector>
+using namespace std;
+template<class T> void print(T start, T end) {
+        while (start != end) {
+                std::cout << *start << ", "; start++;
+        }
+}
+int main(){
+        int mynumbers[] =        { 8, 9, 7, 6};
+        vector<int> v(mynumbers, mynumbers+4);
+        multiset<int> s1(mynumbers, mynumbers+4);
+        for(int i=4; i>0; i--  ) {
+                double x=*(s1.begin());//LINE I
+                v.push_back(i+x);  //LINE II
+        }
+        print(v.begin(), v.end()); cout<<endl;
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE I
+runtime error at LINE II
+program outputs: 8, 9, 7, 6, 10,
+runtime error at LINE I
+program outputs: 8, 9, 7, 6, 10, 9, 8, 7
+compilation error in LINE II
+program outputs: 8, 9, 7, 6, 12, 12, 9, 7
+
+What happens when you attempt to compile and run the following code?
+
+#include <iostream>
+#include <set>
+#include <vector>
+using namespace std;
+int main(){
+        int mynumbers[] =        { 8, 9, 7, 6, 4, 1, 2};
+        vector<int> v(mynumbers, mynumbers+6);
+        multiset<int> s1(v.begin(),v.end());
+        s1.insert(v.begin(),v.end());
+        s1.insert(v.begin(),v.end());//LINE I
+        pair<multiset<int>::iterator,multiset<int>::iterator> range;
+        range = s1.equal_range(6);
+        while (range.first != range.second) {
+                cout<<*range.first<<", ";
+                range.first++;
+        }
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE I
+runtime error at LINE I
+program outputs: 6, 6, 6,
+program outputs: 6, 6, 6, 6,
+program outputs: 6, 4, 1, 2,
+compilation error in LINE II
+runtime error at LINE II
+
+What will be output of the program when you attempt to compile and run the following code?
+
+#include <iostream>
+#include <map>
+#include <vector>
+#include <string>
+using namespace std;
+int main(){
+        int mynumbers[] =        { 8, 9, 7, 2, 6 };
+        string words[] = {"eight", "nine", "seven", "two", "six"};
+        multimap<int,string> m;
+        for(int i=0; i<4; i++) {
+                m.insert(pair<int,string>(mynumbers[i], words[i]));
+                m.insert(pair<int,string>(mynumbers[i], words[i]));
+        }
+        m.insert(pair<int,string>(0,"zero"));                //LINE I
+        for(multimap<int, string>::iterator i=m.begin();i!= m.end(); i++)
+                cout<<i->second<<", ";
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE I
+program outputs: zero, two, seven, seven, eight, eight, nine, nine,
+program outputs: two, two, seven, seven, eight, eight, nine, nine,
+runtime error at LINE I
+program outputs: zero, two, two, seven, seven, eight, eight, nine, nine,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <deque>
+#include <set>
+using namespace std;
+class A {
+        int a;
+public:
+        A(int a):a(a) {}
+        int getA() const { return a;} void setA(int a){ this->a = a;}
+        bool operator < ( const A & b) const { return a<b.a;}
+};
+struct myprinter { void operator() (const A & a) {cout << a.getA() << ", ";} };
+struct doubler
+{
+        void operator() (A a) { a.setA(a.getA()*2) ;}//LINE I
+};
+int main() {
+        int mynumbers[] = { 8, 9, 7, 6, 4, 1 };
+        vector<A> v1(mynumbers, mynumbers + 6);
+        set<A> s1(mynumbers, mynumbers + 6);
+        for_each(v1.begin(), v1.end(), doubler()); for_each(v1.begin(), v1.end(), myprinter());//LINE II
+        for_each(s1.begin(), s1.end(), doubler()); for_each(s1.begin(), s1.end(), myprinter());//LINE III
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 16, 18, 14, 12, 8, 2, 4, 16, 24, 28, 32, 36,
+compilation error in LINE III
+compilation error in LINE I
+compilation error in LINE II
+program outputs: 8, 9, 7, 6, 4, 1, 1, 4, 6, 7, 8, 9,
+program outputs: 16, 18, 14, 12, 8, 2, 2, 8, 12, 14, 16, 18,
+runtime error at LINE I
+
+What will happen when you attempt to compile and run the following code? Choose all that apply.
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <set>
+using namespace std;
+class Pocket {
+        int a;
+public:
+        Pocket(int a) :    a(a) {}
+        int getA() const { return a; }    
+        void setA(int a) { this->a = a; }
+        bool operator < (const Pocket & b) const  { return a<b.a;}
+};
+class Founder {
+public:
+        Pocket val;
+        Founder(Pocket & v):val(v){}
+        bool operator() (Pocket & v) {return (v.getA() == val.getA());}
+};
+int main() {
+        int mynumbers[] = { 8, 9, 7, 6, 4, 1 };
+        vector<Pocket> v1(mynumbers, mynumbers + 6);//LINE I
+        set<Pocket> s1(mynumbers, mynumbers + 6);
+        Pocket a(6);    
+        Founder fonderA(a);
+        if (find_if(v1.begin(), v1.end(), fonderA) !=v1.end()) //LINE II
+                cout<<"Found!, ";
+        else
+                cout<<"Not found!, ";
+        Pocket b(5);    
+        Founder founderB(b);
+        if (find_if(v1.begin(), v1.end(), founderB) !=v1.end()) //LINE III
+                cout<<"Found!";
+        else
+                cout<<"Not found!";
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE II
+program outputs: Not found!, Found!
+compilation error in LINE I
+program outputs: Found!, Found!
+program outputs: Found!, Not found!
+compilation error in LINE III
+runtime error at LINE I
+
+What will happen when you attempt to compile and run the following code?
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+struct Compare {
+        bool operator ()(int a) {return (a > 0);}//LINE I
+        operator int() const{return (4);}//LINE II
+};
+int main () {
+        int mynumbers[] = { 8, 9, 7, 6, 4, 1, 4, 4, 9, 7, 2 };
+        vector<int> v (mynumbers, mynumbers +11);
+        int count = std::count(v.begin(), v.end(), Compare());//LINE III
+        cout<< count <<endl;
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE II
+runtime error at LINE III
+compilation error in LINE III
+program outputs: 4
+program outputs: 3
+compilation error in LINE I
+program outputs: 1
+
+What will happen when you attempt to compile and run the following code?
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+void multiply (int a) {
+        a*3;//LINE I
+}
+int main() {
+        int mynumbers[] = { 8, 9, 7, 6, 4, 1 };
+        vector<int> v1(mynumbers, mynumbers + 6);
+        for_each(v1.begin(), v1.end(), multiply);
+        iter_swap(v1.begin(), mynumbers+5);//LINE II
+        for_each(v1.begin(), v1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+runtime error at LINE II
+program outputs: 8, 9, 7, 6, 4, 1
+compilation error in LINE I
+program outputs: 1, 9, 7, 6, 4, 1,
+compilation error in LINE II
+program outputs: 3, 27, 21, 18, 12, 3,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <set>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int  multiply (int a) {
+        return a*3;//LINE I
+}
+int main() {
+        int mynumbers[] = { 9, 7, 6, 4, 1 };
+        vector<int> v1(mynumbers, mynumbers + 5);
+        set<int> s1(mynumbers, mynumbers + 5);
+        transform(s1.begin(), s1.end(), v1.begin(), multiply);//LINE II
+        for_each(v1.begin(), v1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 3, 12, 18, 21, 27,
+compilation error in LINE II
+runtime error at LINE II
+compilation error in LINE I
+program outputs: 27, 21, 18, 12, 3,
+program outputs: 9, 7, 6, 4, 1
+
+What will happen when you attempt to compile and run the following code?
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <set>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+bool classifier(int v) {
+        return v-4>0;
+}
+int main() {
+        int mynumbers[] = { 9, 7, 6, 4, 1 };
+        vector<int> v1(mynumbers, mynumbers + 5);
+        set<int> s1(mynumbers, mynumbers + 5);
+        replace_if(v1.begin(), v1.end(), classifier, 3);//LINE I
+        for_each(v1.begin(), v1.end(), printer);//LINE II
+        return 0;
+}
+ 
+
+Select correct answers (multiple choice)
+compilation error in LINE II
+compilation error in LINE I
+program outputs: 3, 3, 3, 4, 1,
+you can call replace_if function with classifier function as 3rd parameter ;;;;
+program outputs: 9, 7, 6, 4, 1,
+program outputs: 9, 7, 6, 3, 3,
+runtime error at LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <set>
+using namespace std;
+void printer(int i) {    
+        cout << i << ", ";
+}
+struct sequence {
+        int val,inc;
+public:
+        sequence(int s, int i):val(s),inc(i){}
+        operator int() const{//LINE I
+                int r = val;
+                return r;
+        }
+};
+int main() {
+        vector<int> v1(5);
+        fill(v1.begin(), v1.end(), sequence(2,4));//LINE II
+        for_each(v1.begin(), v1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE I
+program outputs: 2, 3, 4, 2, 3,
+compilation error in LINE II
+runtime error at LINE II
+program outputs: 2, 4, 2, 4, 2,
+program outputs: 2, 2, 2, 2, 2,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void print(int v) {
+        cout<<v<<", ";
+}
+struct Sequence {
+        int start;
+        Sequence(int start):start(start){}
+        int operator()() {
+                return start++;//LINE I
+        }
+};
+int main() {
+        vector<int> v1(5);
+        generate_n(v1.begin(), 5, Sequence(5));//LINE II
+        for_each(v1.begin(), v1.end(), print);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 1, 2, 3, 4, 5,
+runtime error at LINE II
+program outputs: 5, 6, 7, 8, 9,
+compilation error in LINE II
+compilation error in LINE I
+program outputs: 5, 5, 5, 5, 5,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <set>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void print(int v)
+{    
+        cout<<v<<", ";
+}
+struct Sequence {
+        int start;
+        Sequence(int start):start(start){}
+        int operator()() { return start++; }
+};
+bool predicate(int v) { return v%3==0; }
+int main() {
+        vector<int> v1(5);
+        generate_n(v1.begin(), 5, Sequence(5));//LINE I
+        remove_if(v1.begin(), v1.end(), predicate);//LINE II
+        for_each(v1.begin(), v1.end(), print);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 1, 3, 4, 4, 5,
+compilation error in LINE I
+compilation error in LINE II
+program outputs: 5, 7, 8, 8, 9,
+runtime error at LINE II
+program outputs: 1, 2, 4, 5,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+template<class T>struct Out {
+        ostream  & out;
+        Out(ostream & o): out(o){}
+        void operator()(const T & val ) {
+                out<<val<<", ";
+        }
+};
+struct Sequence {
+        int start;
+        Sequence(int start):start(start){}
+        int operator()()
+        {
+                return 2*(start++ % 3);
+        }
+};
+int main() {
+        vector<int> v1(3);
+        vector<int> v2(3);
+        generate(v1.begin(), v1.end(), Sequence(5));//LINE I
+        sort(v1.rbegin(), v1.rend());
+        unique_copy(v1.begin(),v1.end(), v2.begin());//LINE II
+        for_each(v1.begin(), v1.end(), Out<int>(cout) );
+        for_each(v2.begin(), v2.end(), Out<int>(cout) );
+        return 0;
+}
+ 
+
+Select correct answers (multiple choice)
+compilation error in LINE I
+program outputs: 1, 2, 4, 1, 2, 4,
+program outputs: 4, 2, 0, 4, 2, 0,
+program outputs: 4, 2, 0, 0, 2, 4,
+compilation error in LINE II
+you can call unique_copy function on these vectors (v1, v2)
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <set>
+#include <iostream>
+#include <functional>
+#include <algorithm>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 8, 9, 7, 6, 4, 1 };
+        vector<int> v1(mynumbers, mynumbers + 6);
+        sort(v1.begin(), v1.end(), greater<int>());//LINE I
+        for_each(v1.begin(), v1.end(), printer);//LINE II
+        return 0;
+}
+ 
+
+Select correct answers (multiple choice)
+runtime error at LINE I
+program outputs: 9, 8, 7, 6, 4,
+program outputs: 1, 4, 6, 7, 8, 9,
+compilation error in LINE I
+program outputs: 9, 8, 7, 6, 4, 1,
+compilation error in LINE II
+you can call sort function on v1 vector
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void printer(double i) {
+        cout << i << ", ";
+}
+bool Compare(double a, double b) { return int(a)<int(b);}
+int main() {
+        double mynumbers[] = { 1.11, 3.13, 2.12, 5.15, 6.16};
+        vector<double> v1(mynumbers, mynumbers + 5);
+        stable_sort(v1.begin(), v1.end(), Compare);//LINE I
+        remove(v1.begin(), v1.end(), 5.15);//LINE II
+        for_each(v1.begin(), v1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answers (multiple choice)
+program outputs: 1.11, 3.13, 2.12, 6.16,
+size of v1 vector is 6
+compilation error in LINE II
+compilation error in LINE I
+program outputs: 1.11, 3.13, 2.12, 6.16, 6.16,
+size of v1 vector is 5 ;;;;
+program outputs: 1.11, 3.13, 2.12, 6.16, 6.16,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 8, 9, 7, 6, 4, 1 };
+        deque<int> d1(mynumbers, mynumbers + 6);
+        d1.push_back(2);//LINE I
+        sort(d1.begin(), d1.end());
+        pair<deque<int>::iterator, deque<int>::iterator > result = equal_range(d1.begin(), d1.end(), 2);//LINE II
+        for_each(result.first, result.second, printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 0,
+compilation error in LINE I
+program outputs: 2
+program outputs: 1, 2,
+compilation error in LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 8, 9, 7, 6, 4, 1 };
+        deque<Pocket> d1(mynumbers, mynumbers + 6);
+        sort(d1.begin(), d1.end());
+        d1.push_back(3);//LINE I
+        pair<deque<Pocket> ::iterator, deque<Pocket>::iterator > result = equal_range(d1.begin(), d1.end(), Pocket(4));//LINE II
+        for_each(result.first, result.second, printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 3, 4, ;;;;
+runtime error at LINE II
+program outputs: 3,
+compilation error in LINE II ;;;;
+compilation error in LINE I ;;;;
+program outputs: 4, 4, ;;;;
+runtime error at LINE I ;;;;
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator > (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 9, 7, 6, 4, 1 };
+        vector<Pocket> s1(mynumbers, mynumbers + 5);//LINE I
+        sort(s1.begin(), s1.end(), greater<Pocket>());//LINE II
+        for_each(s1.begin(), s1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE II
+program outputs: 4, 6, 7, 9,
+compilation error in LINE I
+program outputs: 1, 4, 6, 7, 9,
+program outputs: 9, 7, 6, 4, 1,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers1[]={3, 9, 0, 2};
+        int mynumbers2[]={6, 1, 4, 5};
+        vector<int> v1(6);
+        sort(mynumbers2, mynumbers2 + 4);
+        sort(mynumbers1, mynumbers1 + 4);//LINE I
+        merge(mynumbers1, mynumbers1+2, mynumbers2, mynumbers2+2, v1.begin());//LINE II
+        for_each(v1.begin(), v1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 0, 1, 2, 4,
+program outputs: 0, 1, 2, 4, 0, 0,
+program outputs: 3, 9, 0, 6, 1, 4,
+compilation error in LINE II
+compilation error in LINE I
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers1[]={ 3, 9, 0, 2};
+        int mynumbers2[]={6, 1, 4, 5};
+        vector<int> v1(12);
+        vector<int> v2(7);
+        sort(mynumbers1, mynumbers1 + 4);
+        copy(mynumbers1, mynumbers1+4, v1.begin());
+        sort(mynumbers2, mynumbers2 + 4);
+        copy(mynumbers2, mynumbers2+4, v1.begin()+5);//LINE I
+        sort(v1.begin(), v1.end());
+        merge(v1.begin()+4, v1.begin()+7, v1.begin()+5, v1.begin()+8, v2.begin());//LINE II
+        for_each(v2.begin(), v2.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 0, 0, 0, 1, 1, 2, 2,
+compilation error in LINE II
+compilation error in LINE I
+program outputs: 0, 1, 1, 2, 2, 3,
+program outputs: 0, 1, 1, 2, 2, 3, 0,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+#include <set>
+using namespace std;
+int main() {
+        int mynumbers1[]={3, 9, 0, 2};
+        int mynumbers2[]={6, 1, 4, 5};
+        sort(mynumbers1, mynumbers1 + 4);
+        sort(mynumbers2, mynumbers2 + 4);
+        deque<int> d1(mynumbers1, mynumbers1+3);//LINE I
+        set<int> s1(mynumbers2, mynumbers2+3);//LINE II
+        sort(d1.begin(), d1.end());
+        cout<<includes(s1.begin(), s1.end(), mynumbers1, mynumbers1+2) <<", "
+                <<includes(d1.begin(), d1.end(), mynumbers1, mynumbers1+2)
+                <<endl;
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 1, 1,
+program outputs: 0, 1,
+compilation error in LINE II
+compilation error in LINE I
+runtime error at LINE II
+program outputs: 1, 0,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers1[]={3, 9, 0, 2};
+        int mynumbers2[]={6, 2, 4, 5};
+        vector<int> v1(2);
+        sort(mynumbers2, mynumbers2 + 4);
+        sort(mynumbers1, mynumbers1 + 4);//LINE I
+        set_intersection(mynumbers1, mynumbers1+3, mynumbers2, mynumbers2+2, v1.begin());//LINE II
+        for_each(v1.begin(), v1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 2, 2,
+compilation error in LINE II
+program outputs: 2, 0,
+program outputs: 2,
+compilation error in LINE I
+runtime error at LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+int main() {
+        int mynumbers[] = { 8, 9, 7, 6, 4, 1 };
+        vector<int> v1(mynumbers, mynumbers + 6);//LINE I
+        cout<< *max_element(v1.begin(), v1.end()) << ", ";//LINE II
+        return 0;
+}
+ 
+
+Select correct answers (multiple choice)
+program outputs: 8,
+you can't call max_element function on non ordered v1 vector
+runtime error at LINE II
+compilation error in LINE I
+you can call max_element function on non ordered v1 vector
+program outputs: 9,
+program outputs: 1,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+#include <set>
+using namespace std;
+int main() {
+        char s[]={"lazybrownfox"};
+        char pattern1[]={"bro"};
+        char pattern2[]={"foz"};
+        sort(s, s+9);
+        sort(pattern1, pattern1+3);
+        sort(pattern2, pattern2+3);
+        cout<<includes(s, s+7, pattern1, pattern1+3) <<", "
+                <<includes(s, s+6, pattern2, pattern2+3);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 1, 0,
+compilation error in LINE I
+program outputs: 1, 1,
+program outputs: 0, 0,
+runtime error at LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        operator int() const
+        { return value;        }
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {//LINE I
+        cout << i << ", ";
+}
+int main() {
+        Pocket mynumbers[] = { 8, 9, 7, 6, 4 };
+        vector<Pocket> v1(mynumbers, mynumbers+5);
+        transform(v1.begin(), v1.end(), v1.begin(), bind2nd(plus<Pocket>(), 4));//LINE II
+        for_each(v1.rbegin(), v1.rend(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 8, 10, 12, 14, 16,
+program outputs: 8, 10, 11, 12, 13,
+runtime error at LINE II
+compilation error in LINE I
+program outputs: 8, 10, 11, 13, 12,
+compilation error in LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <iostream>
+using namespace std;
+int main()
+{
+        cout<<31<<", ";
+        cout.setf(ios::hex);//LINE I
+        cout<<31<<", ";
+        cout.setf (ios::showbase );  //LINE II
+        cout<<63<<", ";
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 31, 31, 63
+compilation error in LINE I
+runtime error at LINE II
+program outputs: 31, 0x1f, 0x3f,
+program outputs: 31, 1f, 0x3f,
+compilation error in LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <iomanip>
+#include <iostream>
+using namespace std;
+int main()
+{
+        double goodpi=3.141593;
+        double badpi = 3.5;
+        cout<<goodpi<<", ";
+        cout<<scientific;//LINE I
+        cout<<setprecision(4);//LINE II
+        cout.unsetf(ios::floatfield);
+        cout<<goodpi<<", ";
+        cout<<badpi<<", ";
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE I
+program outputs: 3.14159, 3.14159, 3.5,
+program outputs: 3.14159, 3.142e+000, 3.5,
+program outputs: 3.14159, 3.142, 3.5,
+compilation error in LINE II
+
+What will happen when you attempt to compile and run the following code assuming that you will enter following sequence: 6 5 7<enter>?
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main ()
+{
+        string s;
+        cin >> s; //LINE I
+        cout << s << ", " << s << ", " << endl; //LINE II
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE I
+program outputs: 6, 6,
+compilation error in LINE II
+program outputs: 6 5 7, 6 5 7,
+program outputs: 6, 5, 7, 6, 5, 7,
+
+What will happen when you attempt to compile and run the following code assuming that file input.txt contains following sequence: i j k?
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <iomanip>
+#include <fstream>
+using namespace std;
+void printer(char c) {
+        cout << setw(2) << c << ", ";
+}
+int main ()
+{
+        ifstream inputfile("input.txt");
+        vector<char> v1;
+        char c;
+        do
+        {
+                inputfile>>c;//LINE I
+                v1.push_back(c);
+        }
+        while (inputfile.good());//LINE II
+        inputfile.close();
+        for_each(v1.begin(), v1.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: i, j, k, k,
+program runs forever without output
+compilation error in LINE II
+program outputs: i, j, k,
+compilation error in LINE I
+program outputs: i, j, k, k,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <iostream>
+#include <string>
+using namespace std;
+template <typename T>
+class Pocket {
+        T        value;
+public:
+        Pocket() {}
+        Pocket(T value);
+        T getValue() { return value; }
+        void add(T _Right) { value += _Right; }
+};
+template<class T>
+Pocket<T>::Pocket(T value):value(value) {}
+int main()
+{
+        Pocket<string> a("Low");
+        string n("End");
+        a.add(n) ;//LINE I
+        cout << a.getValue() << a.getValue();//LINE II
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: LowEnd, LowEnd
+program outputs: LowEndLowEnd
+program outputs: Low EndLow End
+program outputs: LowEnd LowEnd
+compilation error in LINE I
+          

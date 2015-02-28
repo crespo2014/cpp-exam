@@ -1,0 +1,736 @@
+
+Exam
+CPP - Chapter 7 Assessment
+Time left: 59:59
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers1[]={3, 9, 0, 2};
+        int mynumbers2[]={6, 1, 4, 5};
+        vector<int> v1(4);
+        transform(mynumbers1, mynumbers1+4, mynumbers2, v1.rbegin(), plus<int>());//LINE I
+        for_each(v1.rbegin(), v1.rend(), printer);//LINE II
+        return 0;
+}
+ 
+Select correct answer (single choice)
+program outputs: 4, 10, 1, 3, 7, 2, 5, 6 ,
+runtime error at LINE II
+compilation error in LINE I
+program outputs: 3, 9, 0, 2, 6, 1, 4, 5,
+program outputs: 6, 9, 4, 5,
+runtime error at LINE I
+program outputs: 9, 10, 4, 7,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<int> v1(mynumbers, mynumbers + 7);
+        for_each(v1.begin(), v1.end(), bind2nd(plus<int>(), 1));//LINE I
+        for_each(v1.rbegin(), v1.rend(), printer);//LINE II
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 4, 10, 1, 3, 2, 5, 6,
+runtime error at LINE II
+program outputs: 5, 4, 1, 2, 0, 9, 3,
+compilation error in LINE I
+program outputs: 3, 9, 0, 2, 1, 4, 5,
+runtime error at LINE I
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<int> v1(mynumbers, mynumbers + 7);
+        int counter = count_if(v1.begin(), v1.end(), bind1st(plus<int>(), 4));//LINE I
+        v1.push_back(counter);//LINE II
+        for_each(v1.rbegin(), v1.rend(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 3, 9, 0, 2, 1, 4, 5,
+program outputs: 0, 5, 4, 1, 2, 0, 9, 3,
+runtime error at LINE I
+compilation error in LINE I
+program outputs: 4, 10, 1, 3, 2, 5, 6,
+program outputs: 7, 5, 4, 1, 2, 0, 9, 3,
+runtime error at LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<int> v1(mynumbers, mynumbers + 7);
+        int counter = count_if(v1.begin(), v1.end(), bind1st(less_equal<int>(), 4));//LINE I
+        v1.push_back(counter);//LINE II
+        for_each(v1.rbegin(), v1.rend(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE I
+program outputs: 3, 5, 4, 1, 2, 0, 9, 3,
+program outputs: 4, 5, 4, 1, 2, 0, 9, 3,
+program outputs: 7, 3, 9, 0, 2, 1, 4, 5,
+program outputs: 7, 5, 4, 1, 2, 0, 9, 3,
+runtime error at LINE II
+runtime error at LINE I
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers1[] = {3, 9, 0, 2, 1, 4, 5};
+        int mynumbers2[] = {9, 0, 2, 1, 4, 5, 3};
+        vector<int> v1(mynumbers1, mynumbers1+7);
+        vector<int> v2(mynumbers1, mynumbers1+7);
+        vector<int> v3(mynumbers2, mynumbers2+7);//LINE I
+        transform(v1.begin(), v1.end(), v2.rbegin(), v3.begin(), minus<int>());//LINE II
+        for_each(v3.rbegin(), v3.rend(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 6, -9, 2, -1, 3, 1, -2,
+runtime error at LINE I
+runtime error at LINE II
+program outputs: 2, -5, 1, 0, -1, 5, -2,
+compilation error in LINE I
+program outputs: 2, 5, 1, 0, 1, 5, 2,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+struct Add : public binary_function<int, int, int> {//LINE I
+        int operator()(const int & _Left, const int & _Right) const
+        { return _Left+_Right;}
+};
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<int> v1(mynumbers, mynumbers + 7);
+        vector<int> v2(7);
+        transform(v1.begin(), v1.end(), v2.begin(), bind1st(Add(), -1));//LINE II
+        for_each(v2.rbegin(), v2.rend(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+runtime error at LINE I
+program outputs: 4, 10, 1, 3, 2, 5, 6,
+program outputs: 4, 3, 0, 1, -1, 8, 2,
+compilation error in LINE I
+program outputs: 6, 5, 2, 3, 1, 10, 4,
+runtime error at LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+struct Add : public binary_function<int, int, int> {
+        int operator()(int & _Left, const int & _Right) const//LINE I
+        { return _Left+_Right;}
+};
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<int> v1(mynumbers, mynumbers + 7);
+        vector<int> v2(7);
+        transform(v1.begin(), v1.end(), v2.begin(), bind1st(Add(), -1));//LINE II
+        for_each(v2.rbegin(), v2.rend(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 4, 10, 1, 3, 2, 5, 6,
+program outputs: 4, 3, 0, 1, -1, 8, 2,
+runtime error at LINE II
+compilation error in LINE II
+program outputs: 6, 5, 2, 3, 1, 10, 4,
+compilation error in LINE I
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+struct Add : public binary_function<int, int, int> {
+        int operator()(const int & _Left, const int & _Right) const//LINE I
+        { return _Left+_Right;}
+};
+void printer(int i) {
+        cout << i << ", ";
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<int> v1(mynumbers, mynumbers + 7);
+        vector<int> v2(7);
+        transform(v1.begin(), v1.end(), v2.begin(), bind1st(Add, -1));//LINE II
+        for_each(v2.rbegin(), v2.rend(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 6, 5, 2, 3, 1, 10, 4,
+program outputs: 4, 3, 0, 1, -1, 8, 2,
+runtime error at LINE II
+program outputs: 4, 10, 1, 3, 2, 5, 6,
+compilation error in LINE I
+compilation error in LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <deque>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+struct MultiAdd : public binary_function<int, int, int> {
+        int operator()(const int & _Left, const int & _Right) const
+        { return 2*(_Left+_Right);}
+};
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        deque<int> d1(mynumbers, mynumbers + 7);
+        deque<int> d2(7);//LINE I
+        transform(d1.begin(), d1.end(), d2.begin(), bind2nd(MultiAdd(), 1));//LINE II
+        for_each(d2.begin(), d2.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE II
+program outputs: 12, 10, 4, 6, 2, 20, 8,
+compilation error in LINE I
+program outputs: 5, 11, 2, 4, 3, 6, 7,
+runtime error at LINE II
+program outputs: 8, 20, 2, 6, 4, 10, 12,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+void printer(int i) {
+        cout << i << ", ";
+}
+struct Add {
+        int operator()(const int & _Left, const int & _Right) const//LINE I
+        { return _Left+_Right;}
+};
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<int> v1(mynumbers, mynumbers + 7);
+        vector<int> v2(7);
+        transform(v1.begin(), v1.end(), v2.begin(), bind1st(ptr_fun (Add()), 1));//LINE II
+        for_each(v2.begin(), v2.end(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE II
+program outputs: 4, 10, 1, 3, 2, 5, 6,
+program outputs: 6, 5, 2, 3, 1, 10, 4,
+compilation error in LINE I
+program outputs: 3, 9, 0, 2, 1, 4, 5,
+runtime error at LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+int Mul(int & _Left)
+{ return 2*_Left;}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<int> v1(mynumbers, mynumbers + 7);
+        vector<int> v2(7);
+        transform(v1.begin(), v1.end(), v2.begin(), ptr_fun(Mul));//LINE I
+        vector<int>::iterator it = find_if(v2.begin(), v2.end(), bind2nd(equal_to<int>(),7));//LINE II
+        cout<<*it<<endl;//LINE III
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+runtime error at LINE II
+runtime error at LINE III
+compilation error in LINE I
+program outputs: 6
+program outputs: 3
+program outputs: 0
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+int Mul(int & _Left)
+{
+        if (_Left<=3)
+                return 2*_Left;
+        else
+                return 6;
+}
+int main() {
+        int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<int> v1(mynumbers, mynumbers + 7);
+        vector<int> v2(7);
+        transform(v1.begin(), v1.end(), v2.begin(), ptr_fun(Mul));//LINE I
+        vector<int>::iterator it = find_if(v2.begin(), v2.end(), bind2nd(equal_to<int>(),6));//LINE II
+        cout<<*it<<endl;//LINE III
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+runtime error at LINE III
+program outputs: 6
+runtime error at LINE II
+program outputs: 0
+program outputs: 3
+compilation error in LINE I
+program outputs: 6 6
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <functional>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+        operator int() const
+        { return value;        }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue(); //LINE I
+        return stream;
+}
+void printer(Pocket i) {
+        cout << i << ", ";
+}
+int main() {
+        Pocket mynumbers1[] = {3, 9, 0, 2};
+        Pocket mynumbers2[] = {2, 1, 4, 5};
+        vector<Pocket> v1(5, 0);
+        transform(mynumbers1, mynumbers1+4, mynumbers2, v1.rbegin(), plus<Pocket>());//LINE II
+        for_each(v1.rbegin(), v1.rend(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 5, 10, 4, 7, 0
+program outputs: 5, 10, 4, 7,
+program outputs: 7, 4, 10, 5, 0
+runtime error at LINE I
+compilation error in LINE I
+runtime error at LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        operator int() const
+        { return value;        }
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {//LINE I
+        cout << i << ", ";
+}
+int main() {
+        Pocket mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<Pocket> v1(mynumbers, mynumbers+7);
+        transform(v1.begin(), v1.end(), v1.begin(), bind2nd(plus<Pocket>(), 1));//LINE II
+        for_each(v1.rbegin(), v1.rend(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE II
+runtime error at LINE II
+program outputs: 6, 5, 2, 3, 1, 10, 4, 0,
+program outputs: 6, 5, 2, 3, 1, 10, 4,
+program outputs: 4, 10, 1, 3, 2, 5, 6,
+compilation error in LINE I
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        operator int() const
+        { return value;        }
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {//LINE I
+        cout << i << ", ";
+}
+int main() {
+        Pocket mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<Pocket> v1(mynumbers, mynumbers+7);
+        for_each(v1.begin(), v1.end(), bind1st(plus<Pocket>(), 1));//LINE II
+        for_each(v1.rbegin(), v1.rend(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+runtime error at LINE II
+program outputs: 6, 5, 2, 3, 1, 10, 4,
+compilation error in LINE II
+program outputs: 6, 5, 2, 3, 1, 10, 4, 0,
+program outputs: 5, 4, 1, 2, 0, 9, 3,
+compilation error in LINE I
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        operator int() const
+        { return value;        }
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {//LINE I
+        cout << i << ", ";
+}
+int main() {
+        Pocket mynumbers1[] = { 3, 9, 0, 2, 1, 4, 5 };
+        Pocket mynumbers2[] = { 3, 8, 0, 1, 0, 2, 2 };
+        vector<Pocket> v1(mynumbers1, mynumbers1+7);
+        vector<Pocket> v2(mynumbers2, mynumbers2+7);
+        vector<Pocket> v3(7, 0);
+        transform(v1.begin(), v1.end(), v2.begin(), v3.begin(), minus<Pocket>());//LINE II
+        for_each(v1.rbegin(), v1.rend(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 0, 1, 0, 1, 1, 2, 3,
+compilation error in LINE I
+program outputs: 3, 2, 1, 1, 0, 1, 0,
+program outputs: 5, 4, 1, 2, 0, 9, 3,
+compilation error in LINE II
+runtime error at LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        operator int() const
+        { return value;        }
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {//LINE I
+        cout << i << ", ";
+}
+int main() {
+        Pocket mynumbers1[] = { 3, 9, 0, 2, 1, 4, 5 };
+        Pocket mynumbers2[] = { 3, 8, 0, 1, 0, 2, 2 };
+        vector<Pocket> v1(mynumbers1, mynumbers1+7);
+        vector<Pocket> v2(mynumbers2, mynumbers2+7);
+        vector<Pocket> v3(7, 0);
+        transform(v1.begin(), v1.end(), v2.begin(), v3.begin(), minus<Pocket>());//LINE II
+        for_each(v3.rbegin(), v3.rend(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+runtime error at LINE II
+compilation error in LINE I
+program outputs: 5, 4, 1, 2, 0, 9, 3,
+program outputs: 0, 1, 0, 1, 1, 2, 3,
+program outputs: 3, 2, 1, 1, 0, 1, 0,
+compilation error in LINE II
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        operator int() const
+        { return value;        }
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {//LINE I
+        cout << i << ", ";
+}
+struct Add : public binary_function<Pocket, Pocket, Pocket> {
+        Pocket operator()(const Pocket &_Left, const Pocket &_Right) const
+        { return _Left+_Right;   }
+};
+int main() {
+        Pocket mynumbers1[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<Pocket> v1(mynumbers1, mynumbers1+7);
+        vector<Pocket> v2(7, 0);
+        transform(v1.begin(), v1.end(), v2.begin(), bind2nd(Add(),1));//LINE II
+        for_each(v2.rbegin(), v2.rend(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE II
+program outputs: 5, 4, 1, 2, 0, 9, 3,
+runtime error at LINE II
+compilation error in LINE I
+program outputs: 6, 5, 2, 3, 1, 10, 4, 0,
+program outputs: 6, 5, 2, 3, 1, 10, 4,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        operator int() const
+        { return value;        }
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {//LINE I
+        cout << i << ", ";
+}
+template <typename T>
+struct Add : public binary_function<T, T, T> {//LINE I
+        T operator()(const T &_Left, const T &_Right) const
+        { return _Left+_Right;   }
+};
+int main() {
+        Pocket mynumbers1[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<Pocket> v1(mynumbers1, mynumbers1+7);
+        vector<Pocket> v2(7, 0);
+        transform(v1.begin(), v1.end(), v2.begin(), bind2nd(Add<Pocket>(),0));//LINE II
+        for_each(v2.rbegin(), v2.rend(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+compilation error in LINE I
+program outputs: 5, 4, 1, 2, 0, 9, 3,
+program outputs: 6, 5, 2, 3, 1, 10, 4, 0,
+compilation error in LINE II
+runtime error at LINE II
+program outputs: 6, 5, 2, 3, 1, 10, 4,
+
+What will happen when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+class Pocket {
+        int value;
+public:
+        Pocket(int value):value(value){}
+        int getValue() const
+        { return value; }  
+        operator int() const
+        { return value;        }
+        bool operator < (const Pocket & _Right) const
+        { return value < _Right.value; }
+};
+ostream & operator <<(ostream & stream, const Pocket & pocket)
+{
+        stream << pocket.getValue();
+        return stream;
+}
+void printer(Pocket i) {//LINE I
+        cout << i << ", ";
+}
+template <typename T>
+struct Add : public binary_function<T, T, T> {//LINE I
+        T operator()(const T &_Left, const T &_Right) const
+        { return _Left+_Right;   }
+};
+int main() {
+        Pocket mynumbers1[] = { 3, 9, 0, 2, 1, 4, 5 };
+        vector<Pocket> v1(mynumbers1, mynumbers1+7);
+        vector<Pocket> v2(7, 0);
+        transform(v1.begin(), v1.end(), v2.begin(), bind1st(ptr_fun (Add<Pocket>()), 1));//LINE II
+        for_each(v2.rbegin(), v2.rend(), printer);
+        return 0;
+}
+ 
+
+Select correct answer (single choice)
+program outputs: 5, 4, 1, 2, 0, 9, 3,
+program outputs: 6, 5, 2, 3, 1, 10, 4, 0,
+compilation error in LINE I
+program outputs: 6, 5, 2, 3, 1, 10, 4,
+compilation error in LINE II
+          
