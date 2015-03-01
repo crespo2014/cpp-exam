@@ -1,3 +1,5 @@
+// What will happen when you attempt to compile and run the following code? Choose all that apply:
+
 #include <vector>
 #include <ostream>
 #include <sstream>
@@ -11,3 +13,12 @@ int main()
   std::cout << v1.front() << ":" << v1.back() << std::endl;                // LINE III
   return 0;
 }
+
+/*
+Select correct answer (single choice)
+compilation fails due to error in line 2
+compilation fails due to error in line 1
+compilation fails due to error in line 3
+program displays 0:10
+code compiles and executes successfully
+*/

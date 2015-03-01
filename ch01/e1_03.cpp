@@ -1,3 +1,4 @@
+//Which sentences are 100% true about the code below (multiple choice) when control reaches return:
 #include <vector>
 #include <ostream>
 #include <sstream>
@@ -15,3 +16,10 @@ int main()
   }
   return 0;
 }
+/*
+Select correct answers (multiple choice)
+both vectors v1 and v2 have the same capacity
+code will not compile
+value returned by size() is the same for vectors v1 and v2
+size of vector v2 less than 20
+*/

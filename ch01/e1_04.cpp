@@ -1,3 +1,4 @@
+//Which sentences are 100% true about the code below (multiple choice) when control reaches return:
 #include <vector>
 #include <ostream>
 #include <sstream>
@@ -24,3 +25,11 @@ int main()
   }
   return 0;
 }
+/*
+Select correct answer (single choice)
+program will run and print output: Exception!
+the exception will be thrown at line LINE III
+program will run and print output: 10 9 8 7 6 5 4 3 2 1 Exception!
+this program will not compile,
+the exception will be thrown at line LINE I
+*/
