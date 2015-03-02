@@ -27,6 +27,15 @@ int main()
   {
     v2.push_back(v1[v1.end() - it - 1]);        //LINE I
   }
-  // print(v2.rbegin(), v2.rend()) << endl;        //LINE II
+  print(v2.rbegin(), v2.rend()) << endl;        //LINE II
   return 0;
 }
+/*
+ * Select correct answer (single choice)
+program will run successfuly and display: 10 9 8 7 6 5 4 3 2 1
+the result of program execution is unpredictable or there might be run time exception
+program will run successfuly and display: 1 2 3 4 5 6 7 8 9 10
+code will not compile due to error in line LINE I
+code will not compile due to error in line LINE II
+*/
+

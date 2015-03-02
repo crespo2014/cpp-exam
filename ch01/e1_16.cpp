@@ -18,3 +18,12 @@ int main()
   cout << q.front() << " " << q.back() << endl;
   return 0;
 }
+
+/*
+ * Select correct answer (single choice)
+program will display: 1 2 5 4
+program will display: 2 1 4 1
+program will display: 1 2 5 2
+program will display: 5 1 4 1
+program will display: 1 5 2 5
+ */

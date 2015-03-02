@@ -42,8 +42,16 @@ int main()
   list<A>::iterator it;
   for (it = l1.begin(); it != l1.end(); ++it)
   {
-    //l2.push_front(it);
+    l2.push_front(it);
   }
   print(l2.begin(), l2.end()) << endl;
   return 0;
 }
+
+/*
+ * Select correct answer (single choice)
+code will not compile
+program will run successfuly but displayed result is unpredictable
+program will run successfuly and display: 10 9 8 7 6 5 4 3 2 1
+program will run successfuly and display: 1 2 3 4 5 6 7 8 9 10
+ */

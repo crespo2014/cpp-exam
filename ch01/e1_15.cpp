@@ -19,3 +19,12 @@ int main()
   cout << q.top() << endl;
   return 0;
 }
+
+/*
+ * Select correct answers (multiple choice)
+program will display: 3 3
+program will display: 3 0
+program will display: 1 1
+program will display: 5 5
+program will display: 2 0
+ */

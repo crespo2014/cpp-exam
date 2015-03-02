@@ -1,3 +1,4 @@
+
 #include <vector>
 #include <ostream>
 #include <sstream>
@@ -29,4 +30,11 @@ int main()
   print(d2.begin(), d2.end()) << ": " << d2.size() << endl;
   return 0;
 }
-
+/*
+Select correct answer (single choice)
+program will run successfuly and display: 10 10 10 10 10 10 10 10 10 10 : 10
+program will run successfuly and display: 1 2 3 4 5 6 7 8 9 10 : 10
+program will run successfuly and display: 1 1 1 1 1 1 1 1 1 1 : 10
+code will not compile due to error in line marked LINE II
+code will not compile due to error in line marked LINE I
+*/

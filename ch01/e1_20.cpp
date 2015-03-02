@@ -32,3 +32,12 @@ int main()
   print(v2.rbegin(), v2.rend()) << ": " << v2.size() << endl;
   return 0;
 }
+
+/*
+ * Select correct answer (single choice)
+program will run successfuly and display: 10 9 8 7 6 5 4 3 2 1 : 20
+program will run successfuly and display: 1 2 3 4 5 6 7 8 9 10 : 10
+program will run successfuly and display: 1 2 3 4 5 6 7 8 9 10 : 20
+program will run successfuly and display: 10 9 8 7 6 5 4 3 2 1 : 10
+code will not compile
+ */

@@ -36,7 +36,7 @@ void fill(const int table[], unsigned size, vector<A*> & v)
   }
 }
 
-friend ostream & operator<<(ostream & c, const A & o)
+ostream & operator<<(ostream & c, const A & o)
 {
   c << o.a;
   return c;
@@ -57,3 +57,11 @@ int main()
   print(l1.begin(), l1.end()) << endl;
   return 0;                //LINE I
 }
+/*
+ * Select correct answers (multiple choice)
+code will not compile
+program will run successfuly and display: 1 2 3 4 5 6 7 8 9 10
+program will run successfuly but displayed result is unpredictable
+when program reaches LINE I there will be 20 objects of type A
+when program reaches LINE I there will be 10 objects of type A
+ */

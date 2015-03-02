@@ -18,3 +18,11 @@ int main()
   cout << s.top() << endl;
   return 0;
 }
+/*
+ * Select correct answer (single choice)
+program will cause runtime exception
+program will display: 2 6
+program will display: 1 1
+program will display: 1 6
+program will display: 2 2
+ */

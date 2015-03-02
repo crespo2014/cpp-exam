@@ -29,3 +29,12 @@ int main()
   cout << v1.size() << endl;
   return 0;
 }
+
+/*
+ * Select correct answer (single choice)
+program will run successfuly and display: 1 2 3 5 6 7 8 9 10 9
+program will run successfuly and display: 1 2 3 6 7 8 9 10 0
+code will not compile
+program will run successfuly and display: 1 2 3 6 7 8 9 10 8
+program will run successfuly and display: 1 2 3 5 6 7 8 9 10 0
+ */
