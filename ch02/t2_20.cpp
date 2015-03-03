@@ -14,7 +14,7 @@ int main()
   map<int, string> m;
   for (int i = 0; i < 10; i++)
   {
-    //m.push_back(pair<int, string>(mynumbers[i], words[i]));                //LINE I
+    m.push_back(pair<int, string>(mynumbers[i], words[i]));                //LINE I
   }
 
   for (map<int, string>::iterator i = m.begin(); i != m.end(); i++)                //LINE II

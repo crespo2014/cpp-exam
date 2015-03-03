@@ -21,10 +21,7 @@ public:
   {
     return a;
   }
-  bool operator <(const A & b) const
-  {
-    return b.a < a;
-  }    //LINE I
+  bool operator <(const A & b) const   {    return b.a < a;  }    //LINE I
 };
 
 int main()

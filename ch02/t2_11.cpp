@@ -1,8 +1,7 @@
 #include <iostream>
 #include <set>
-#include <vector>
-#include <functional>
-#include <sstream>
+#include <list>
+
 using namespace std;
 
 int main()

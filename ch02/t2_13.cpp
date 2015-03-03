@@ -21,7 +21,7 @@ template<class T>
     for (int i = 9; i > 0; i)
     {
     double x = s1.pop();                                 //LINE I
-    v.push_back(i + x);    //LINE II
+    v.push_back(i + x);    //LINE II FIXME gcc do not complain by this, by x could not be defined
     }
     print(v.begin(), v.end());
     cout << endl;

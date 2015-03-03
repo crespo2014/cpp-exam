@@ -21,10 +21,7 @@ public:
     return a;
   }
   //LINE I
-  bool operator <(const A & b) const
-  {
-    return a < b.a;
-  }
+  bool operator <(const A & b) const   {    return a < b.a;  }  //added
 };
 int main()
 {
@@ -44,13 +41,7 @@ int main()
 /*
  Select correct answer(single choice)
  code compiles and executes successfully
- bool operator < (const A & b) const
- { return b.a<a;}inserted at LINE I
- multimap<A, string>::iterator i = m.end();
- inserted at LINE II
- bool operator <(const A & b) const
- {
- return a < b.a;
- }
- inserted at LINE I
+ bool operator < (const A & b) const  { return b.a<a;}inserted at LINE I
+ multimap<A, string>::iterator i = m.end();  inserted at LINE II
+ bool operator <(const A & b) const  { return a < b.a; } inserted at LINE I
  */

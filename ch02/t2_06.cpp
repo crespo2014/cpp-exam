@@ -22,7 +22,7 @@ int main()
   {
     int x = s.top();    //LINE I
     s.pop();                 //LINE II
-    v.push_back(i + x);                 //LINE III
+    v.push_back(i + x);                 //LINE III  FIXME using x is confusing because compiler maybe complain maybe not
   }
   print(v.begin(), v.end());
   print(s.begin(), s.end());
