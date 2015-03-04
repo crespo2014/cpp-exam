@@ -16,7 +16,7 @@ int main()
 {
   int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
   map<int, int> m;
-  for (int i = 0; i < 10; i++)
+  for (int i = 0; i < 10; i++) //FIXME mynumbers only has 7 items
   {
     m[i] = mynumbers[i];
   }
