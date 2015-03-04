@@ -54,8 +54,7 @@ int main()
   A a(5);
   Founder f(a);
   find_if(s1.begin(), s1.end(), f.val);    //LINE II
-  if (find_if(v1.begin(), v1.end(), f) != v1.end())
-  {    //LINE III
+  if (find_if(v1.begin(), v1.end(), f) != v1.end())  {    //LINE III
     cout << "Found!\n";
   } else
   {

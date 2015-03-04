@@ -35,12 +35,7 @@ public:
 };
 struct Comparer
 {
-  bool operator()(const A & a, const A & b)
-  {
-    //return a.getA() == b.getA();
-  }
-  ;
-  //LINE I
+  bool operator()(const A & a, const A & b)  { return a.getA() == b.getA();}  ; //LINE I
 };
 int main()
 {
