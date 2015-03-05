@@ -22,7 +22,7 @@ struct Sequence
 int main()
 {
   vector<int> v1(7);
-  //generate_n(v1.begin(), 7, Sequence());    //LINE II NOT default ctor
+  generate_n(v1.begin(), 7, Sequence());    //LINE II
   for_each(v1.begin(), v1.end(), print);
   return 0;
 }

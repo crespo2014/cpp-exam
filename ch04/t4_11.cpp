@@ -1,6 +1,8 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <set>
+#include <deque>
 using namespace std;
 
 static void printer(int i)

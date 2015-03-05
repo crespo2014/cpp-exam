@@ -33,15 +33,15 @@ int main()
   vector<int> v2(4);
   generate(v1.begin(), v1.end(), Sequence(10));
   reverse_copy(v1.begin(), v1.end(), v2.rbegin());    //LINE I
-  sort(v2.begin(), v2.end(), less_equal<int>());
-  ;    //LINE II
+  sort(v2.begin(), v2.end(), less_equal<int>());;    //LINE II
   for_each(v2.begin(), v2.end(), Out<int>(cout));
   return 0;
 }
 /*
  Select
- correct answer(single choice) compilation error in
- LINE IIprogram outputs: 0, 1, 2, 3,
+ correct answer(single choice)
+ compilation error in LINE II
+ program outputs: 0, 1, 2, 3,
  you can't call reverse_copy function on v1 and v2 vectors
  program outputs: 10, 11, 12, 13,
  you can't call sort function on v2 vector

@@ -37,7 +37,8 @@ int main()
 }
 /*
  Select
- correct answer(single choice) program outputs: 0, 3, 0, 3, 0, 3, 0,
+ correct answer(single choice)
+ program outputs: 0, 3, 0, 3, 0, 3, 0,
  runtime error at LINE II
  you can't call unique function on vector
  runtime error at LINE I

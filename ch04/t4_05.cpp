@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <set>
 using namespace std;
 
 static void printer(int i)
@@ -12,8 +13,8 @@ int main()
   int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
   set<int> s1(mynumbers, mynumbers + 7);
   vector<int> v1(s1.rbegin(), s1.rend());
-//    swap_ranges(v1.begin(), s1.end(), v1.begin());    //LINE I
-//    swap_ranges(s1.begin(), v1.end(), s1.begin());    //LINE II
+  swap_ranges(v1.begin(), s1.end(), v1.begin());    //LINE I
+  swap_ranges(s1.begin(), v1.end(), s1.begin());    //LINE II
   for_each(s1.begin(), s1.end(), printer);
   for_each(v1.begin(), v1.end(), printer);
   return 0;

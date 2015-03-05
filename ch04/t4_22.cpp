@@ -1,6 +1,8 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <set>
+#include <deque>
 using namespace std;
 
 template<class T> struct Out
@@ -42,7 +44,8 @@ int main()
 }
 /*
  Select
- correct answers(multiple choice) program outputs: 3, 4, 5, 5, 4, 3, 3, 4, 5,
+ correct answers(multiple choice)
+ program outputs: 3, 4, 5, 5, 4, 3, 3, 4, 5,
  program outputs: 3, 4, 5, 3, 4, 5, 3, 4, 5,
  runtime error at LINE II
  compilation error in LINE I

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <deque>
 using namespace std;
 
 static void printer(int i)
@@ -20,7 +21,8 @@ int main()
 }
 /*
  Select
- correct answer(single choice) program outputs: 0, 1, 2, 3, 4, 5, 9, 3, 9, 0, 2, 1, 4, 5,
+ correct answer(single choice)
+ program outputs: 0, 1, 2, 3, 4, 5, 9, 3, 9, 0, 2, 1, 4, 5,
  compilation error in LINE I
  program outputs: 0, 1, 2, 3, 4, 5, 3, 0, 2, 1, 4, 5,
  runtime error at LINE I

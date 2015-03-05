@@ -44,8 +44,9 @@ int main()
 }
 /*
  Select
- correct answer(single choice) runtime error at
- LINE Iprogram outputs: 6, 5, 4, 3,
+ correct answer(single choice)
+ runtime error at LINE I
+ program outputs: 6, 5, 4, 3,
  program outputs: 6, 5, 3, 4,
  compilation error in LINE I
  runtime error at LINE II
