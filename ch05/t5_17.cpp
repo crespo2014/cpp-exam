@@ -37,7 +37,7 @@ int main()
 {
   int mynumbers[] = { 3, 9, 0, 2, 1, 4, 5 };
   set<Pocket> s1(mynumbers, mynumbers + 7);
-  //sort(s1.begin(), s1.end());    //LINE I
+  sort(s1.begin(), s1.end());    //LINE I
   for_each(s1.begin(), s1.end(), printer);    //LINE II
   return 0;
 }

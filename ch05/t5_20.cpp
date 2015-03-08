@@ -40,7 +40,7 @@ static string tolower(const string & s)
   string tmp(s);
   for (unsigned i = 0; i < tmp.size(); ++i)
   {
-    tmp[i] = std::tolower(tmp[i]);      ///std:: was mssing
+    tmp[i] = tolower(tmp[i]);
   }
   return tmp;
 }

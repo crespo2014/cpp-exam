@@ -4,6 +4,7 @@
 #include <functional>
 #include <algorithm>
 #include <cctype>
+#include <deque>
 using namespace std;
 
 static
