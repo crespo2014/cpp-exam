@@ -7,7 +7,7 @@ int main()
         cout.setf (ios::showbase);  //LINE I
         cout<<127<<", ";
         cout.unsetf(ios::showbase);
-        cout<<std::showbase<<127<<", ";//LINE II
+        cout<<ios::showbase<<127<<", ";//LINE II
         return 0;
 }
 
