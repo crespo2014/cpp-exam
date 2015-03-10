@@ -1,5 +1,4 @@
-Which construction/keywords can be used to define template type parameters? Choose all correct answers:
-
+//Which construction/keywords can be used to define template type parameters? Choose all correct answers:
 template<static T>
 Pocket<T>::Pocket(T v):_v(v) {}
 template<typedef T>
@@ -11,6 +10,10 @@ Pocket<T>::Pocket(T v):_v(v) {}
 template<volatile T>
 Pocket<T>::Pocket(T v):_v(v) {}
 
+int main()
+{
+return 0;
+}
 /*
 Select correct answers (multiple choice)
 with static keyword
